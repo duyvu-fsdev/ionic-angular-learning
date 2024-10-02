@@ -4,6 +4,24 @@
  margin: 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+ width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+ background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #80808021;
+ border-radius: 6px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #80808080;
+}
+
 body {
  font-family: 'Be Vietnam Pro', sans-serif;
 }
