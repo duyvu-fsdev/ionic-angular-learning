@@ -6,3 +6,26 @@
 #title {
  color: red;
 }
+.container {
+ margin-top: 10px;
+ display: flex;
+ gap: 10px;
+ flex-direction: column;
+}
+.lesson {
+ width: fit-content;
+ background-color: rgba(128, 128, 128, 0.164);
+ box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
+ padding: 20px 20px 30px;
+ border-radius: 10px;
+ .title {
+  margin: 5px 0px 10px 0px;
+  color: blue;
+ }
+ li {
+  margin-left: 40px;
+  & + li {
+   margin-top: 5px;
+  }
+ }
+}
