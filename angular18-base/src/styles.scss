@@ -3,3 +3,30 @@
  padding: 0;
  margin: 0;
 }
+
+body {
+ font-family: 'Be Vietnam Pro', sans-serif;
+}
+:root {
+ --primary-color: #605dc8;
+ --secondary-color: #8b89e6;
+ --accent-color: #e8e7fa;
+ --shadow-color: #e8e8e8;
+}
+
+button.primary {
+ padding: 10px;
+ border: solid 1px var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ border-radius: 8px;
+}
+
+.component-container {
+ margin: 10px 0;
+ width: fit-content;
+ background-color: rgba(128, 128, 128, 0.164);
+ box-shadow: 0px 0px 5px 1px rgb(255, 0, 0);
+ padding: 10px;
+ border-radius: 5px;
+}

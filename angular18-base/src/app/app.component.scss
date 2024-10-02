@@ -1,19 +1,26 @@
 #main {
- margin: 10px auto;
  margin-left: 10px;
- width: 1200px;
-}
-#title {
- color: red;
+ display: flex;
+ justify-content: center;
 }
 .container {
- margin-top: 10px;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ left: 0;
+ padding: 10px;
  display: flex;
  gap: 10px;
  flex-direction: column;
+ border: 1px solid rgba(128, 128, 128, 0.13);
+
+ #title {
+  color: red;
+ }
 }
 .lesson {
- width: fit-content;
+ //  width: fit-content;
  background-color: rgba(128, 128, 128, 0.164);
  box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
  padding: 20px 20px 30px;
@@ -22,10 +29,39 @@
   margin: 5px 0px 10px 0px;
   color: blue;
  }
- li {
-  margin-left: 40px;
-  & + li {
+ ul {
+  font-weight: 600;
+  margin-left: 20px;
+  list-style: decimal;
+  li + li {
    margin-top: 5px;
   }
+  ul.sub {
+   font-weight: 500;
+   margin-left: 10px;
+   margin-top: 10px;
+   list-style: lower-latin;
+   li {
+    & + li {
+     margin-top: 5px;
+    }
+   }
+  }
  }
+ .lesson-child {
+  margin: 10px;
+  box-shadow: 0 0 3px 0px var(--primary-color);
+  border-radius: 5px;
+  padding: 10px 10px 20px;
+  header {
+   display: block;
+   height: 60px;
+   padding: var(--content-padding);
+   box-shadow: 0px 5px 25px var(--shadow-color);
+   margin: 5px;
+  }
+ }
+}
+:host {
+ --content-padding: 10px;
 }
