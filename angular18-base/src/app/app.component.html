@@ -93,12 +93,26 @@
      <li>Inject the housing service into HomeComponent</li>
     </ul>
    </div>
+
+   <div class="lesson">
+    <h2 class="title">Lesson 10: Routes</h2>
+    <ul class="lesson-content">
+     <li>Create a default details component</li>
+     <ul class="sub">
+      <li>"ng g c components/details --skip-tests"</li>
+     </ul>
+     <li>Add routing to the application</li>
+     <li>Add route to new component</li>
+    </ul>
+   </div>
   </div>
   <div class="right">
    <header class="brand-name">
-    <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+    <a [routerLink]="['/']">
+     <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+    </a>
    </header>
-   <app-home></app-home>
+   <router-outlet></router-outlet>
   </div>
  </div>
 </div>
