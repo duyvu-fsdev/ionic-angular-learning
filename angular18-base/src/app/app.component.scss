@@ -19,8 +19,8 @@
  gap: 10px;
  flex-direction: column;
  position: relative;
- flex: 1;
  overflow-y: scroll;
+ width: 450px;
  min-width: 450px;
  #title {
   color: red;
@@ -61,8 +61,7 @@
  --content-padding: 10px;
 }
 .right {
- min-width: 450px;
- flex: 2;
+ flex: 1;
  box-shadow: 0 0 3px 0px var(--primary-color);
  header {
   display: block;
