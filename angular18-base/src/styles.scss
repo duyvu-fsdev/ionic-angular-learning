@@ -35,6 +35,11 @@ button {
  cursor: pointer;
 }
 
+button:disabled {
+ opacity: 0.5;
+ cursor: auto;
+}
+
 button.primary {
  padding: 10px;
  border: solid 1px var(--primary-color);
