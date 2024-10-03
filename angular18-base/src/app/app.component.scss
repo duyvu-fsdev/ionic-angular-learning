@@ -21,6 +21,7 @@
  position: relative;
  flex: 1;
  overflow-y: scroll;
+ min-width: 450px;
  #title {
   color: red;
  }
@@ -60,9 +61,9 @@
  --content-padding: 10px;
 }
 .right {
+ min-width: 450px;
  flex: 2;
  box-shadow: 0 0 3px 0px var(--primary-color);
- //  border: 1px solid #80808021;
  header {
   display: block;
   height: 60px;
