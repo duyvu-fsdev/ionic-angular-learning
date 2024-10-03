@@ -31,6 +31,9 @@ body {
  --accent-color: #e8e7fa;
  --shadow-color: #e8e8e8;
 }
+button {
+ cursor: pointer;
+}
 
 button.primary {
  padding: 10px;

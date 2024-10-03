@@ -66,6 +66,9 @@
 .right {
  flex: 1;
  box-shadow: 0 0 3px 0px var(--primary-color);
+ overflow-y: scroll;
+ height: 100vh;
+
  header {
   display: block;
   height: 60px;
