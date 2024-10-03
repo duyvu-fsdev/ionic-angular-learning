@@ -14,9 +14,16 @@ export class DetailsComponent {
  housingService = inject(HousingService);
  housingLocation: HousingLocation | undefined;
  housingLocationId = -1;
+ //  constructor(private fb: FormBuilder) {
+ //   const housingLocationId = Number(this.route.snapshot.params['id']);
+ //   this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
+ //  }
+
  constructor(private fb: FormBuilder) {
-  const housingLocationId = Number(this.route.snapshot.params['id']);
-  this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
+  const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
+  this.housingService.getHousingLocationById(housingLocationId).then((housingLocation) => {
+   this.housingLocation = housingLocation;
+  });
  }
 
  applyForm = this.fb.group({
