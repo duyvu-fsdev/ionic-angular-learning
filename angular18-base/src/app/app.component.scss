@@ -46,11 +46,14 @@
     font-weight: 500;
     margin-left: 10px;
     margin-top: 10px;
-    list-style: lower-latin;
+    list-style: disc;
     li {
      & + li {
-      margin-top: 5px;
+      margin-bottom: 5px;
      }
+    }
+    li:last-child {
+     margin-bottom: 20px;
     }
    }
   }

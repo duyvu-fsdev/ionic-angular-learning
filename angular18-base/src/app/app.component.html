@@ -16,9 +16,9 @@
     <ul class="lesson-content">
      <li>Create Home component</li>
      <ul class="sub">
-      <li>ng g c components/home --skip-tests</li>
-      <li>import HomeComponent to AppComponent</li>
+      <li>"ng g c components/home --skip-tests"</li>
      </ul>
+     <li>import HomeComponent to AppComponent</li>
     </ul>
    </div>
    <div class="lesson">
@@ -26,9 +26,9 @@
     <ul class="lesson-content">
      <li>Create HousingLocation component</li>
      <ul class="sub">
-      <li>ng g c components/housingLocation --skip-tests</li>
-      <li>import HomeComponent to HomeComponent</li>
+      <li>"ng g c components/housingLocation --skip-tests"</li>
      </ul>
+     <li>import HomeComponent to HomeComponent</li>
     </ul>
    </div>
    <div class="lesson">
@@ -36,9 +36,28 @@
     <ul class="lesson-content">
      <li>Create housinglocation interface</li>
      <ul class="sub">
-      <li>ng g interface interfaces/housinglocation</li>
-      <li>import HousingLocation interface to HomeComponent</li>
-      <li>Create housingLocation : HousingLocation</li>
+      <li>"ng g interface interfaces/housinglocation"</li>
+     </ul>
+     <li>Create housingLocation : HousingLocation</li>
+     <li>import HousingLocation interface to HomeComponent</li>
+    </ul>
+   </div>
+   <div class="lesson">
+    <h2 class="title">Lesson 5: Add an input parameter to the component</h2>
+    <ul class="lesson-content">
+     <li>Learn and use &#64;Input in HousingLocationComponent</li>
+     <ul class="sub">
+      <li>"ng g interface interfaces/housinglocation"</li>
+     </ul>
+     <li>Add the Input property</li>
+     <ul class="sub">
+      <li>
+       "export class HousingLocationComponent {{ '{' }}<br />
+       ... <br />
+       &#64;Input() housingLocation!: HousingLocation;<br />
+       ...<br />
+       {{ '}' }}"
+      </li>
      </ul>
     </ul>
    </div>
