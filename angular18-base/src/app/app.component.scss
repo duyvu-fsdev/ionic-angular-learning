@@ -61,10 +61,10 @@
  }
  .lesson-2 {
   padding: 20px;
- }
- .title-2 {
-  text-decoration: none;
-  color: blue;
+  a {
+   text-decoration: none;
+   color: blue;
+  }
  }
  .hilight {
   background: yellow;
