@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HousingLocationComponent } from './components/housing-location/housing-location.component';
 import { DetailsComponent } from './components/details/details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModelBindingComponent } from './components/ng-model-binding/ng-model-binding.component';
 
 @NgModule({
- declarations: [AppComponent, HomeComponent, HousingLocationComponent, DetailsComponent],
- imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+ declarations: [AppComponent, HomeComponent, HousingLocationComponent, DetailsComponent, NgModelBindingComponent],
+ imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
  providers: [],
  bootstrap: [AppComponent],
 })

@@ -1,0 +1,8 @@
+<!-- ngModel - Data/Events/Two-way binding -->
+<div>
+ <input type="text" [(ngModel)]="name" placeholder="Name" />
+ <p>
+  Result :<span class="text"> {{ name }}</span>
+ </p>
+ <button (click)="resetName()">Reset name</button>
+</div>

@@ -25,7 +25,8 @@
  #title {
   color: red;
  }
- .lesson {
+ .lesson,
+ .lesson-2 {
   //  width: fit-content;
   background-color: rgba(128, 128, 128, 0.164);
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
@@ -58,22 +59,41 @@
    }
   }
  }
+ .lesson-2 {
+  padding: 20px;
+ }
+ .title-2 {
+  text-decoration: none;
+  color: blue;
+ }
+ .hilight {
+  background: yellow;
+  padding: 20px;
+  color: red;
+  font-weight: bold;
+  a {
+  }
+ }
 }
 
 :host {
  --content-padding: 10px;
 }
+
 .right {
  flex: 1;
  box-shadow: 0 0 3px 0px var(--primary-color);
  overflow-y: scroll;
  height: 100vh;
-
  header {
   display: block;
   height: 60px;
   padding: var(--content-padding);
   box-shadow: 0px 5px 25px var(--shadow-color);
   margin: 5px;
+  color: var(--primary-color);
+ }
+ .main-content {
+  padding: 10px;
  }
 }

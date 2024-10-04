@@ -1,7 +1,11 @@
 <div id="main">
  <div class="container">
+  @if ((currentPath$|async) != 'basic-knowledge') {
   <div class="left">
    <h1 id="title">Angular 18 base</h1>
+   <div class="lesson hilight">
+    <a routerLink="/basic-knowledge"> >>> Review basic knowledge Angular 18</a>
+   </div>
    <div class="lesson">
     <h2 class="title">Lesson 1. Angular Architecture</h2>
     <ul class="lesson-content">
@@ -93,7 +97,6 @@
      <li>Inject the housing service into HomeComponent</li>
     </ul>
    </div>
-
    <div class="lesson">
     <h2 class="title">Lesson 10: Routes</h2>
     <ul class="lesson-content">
@@ -126,7 +129,6 @@
      <li>Implement the event handler function</li>
     </ul>
    </div>
-
    <div class="lesson">
     <h2 class="title">Lesson 14: HTTP communication</h2>
     <ul class="lesson-content">
@@ -134,8 +136,10 @@
      <li>Update service to use web server instead of local array</li>
     </ul>
    </div>
+   <div class="lesson hilight">
+    <a [routerLink]="['/basic-knowledge']"> >>> Review basic knowledge Angular 18</a>
+   </div>
   </div>
-
   <div class="right">
    <header class="brand-name">
     <a [routerLink]="['/']">
@@ -144,5 +148,18 @@
    </header>
    <router-outlet></router-outlet>
   </div>
+  }@else {
+  <div class="left">
+   <div class="lesson-2">
+    <a routerLink="/basic-knowledge/ng-model-binding" class="title-2">1. ngModel - Data/Events/Two-way binding</a>
+   </div>
+  </div>
+  <div class="right">
+   <header class="brand-name">
+    <h2>{{ pageTitle$ | async }}</h2>
+   </header>
+   <div class="main-content"><router-outlet></router-outlet></div>
+  </div>
+  }
  </div>
 </div>
