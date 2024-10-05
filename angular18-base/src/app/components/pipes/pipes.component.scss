@@ -1,0 +1,80 @@
+.pipes {
+ p {
+  background-color: yellow;
+  padding: 5px 10px;
+  color: red;
+  font-weight: bold;
+  margin: 10px;
+  width: fit-content;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+ }
+ ul {
+  list-style-type: decimal;
+  .title {
+   color: var(--primary-color);
+   margin: 10px;
+   font-size: 20px;
+   font-weight: bold;
+  }
+
+  .original,
+  .changed {
+   margin-left: 20px;
+   list-style-type: none;
+  }
+
+  ul.original {
+   li {
+    margin-bottom: 10px;
+    &::before {
+     content: 'Original : ';
+     color: blue;
+    }
+   }
+  }
+
+  ul.changed {
+   li {
+    display: flex;
+    align-items: center;
+    &::before {
+     content: 'Convert to : ';
+     color: blue;
+    }
+    p {
+     background-color: #fff;
+     color: #42d96b;
+     margin: 1px 4px;
+     padding: 2px 4px;
+    }
+   }
+  }
+ }
+ a {
+  display: block;
+  margin-top: 5px;
+ }
+ .block {
+  padding-left: 40px;
+  width: fit-content;
+ }
+ .hasImg {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+ }
+ img {
+  border-radius: 10px;
+  width: 100%;
+ }
+ img.square {
+  width: 150px;
+  height: 150px;
+ }
+ .hr {
+  height: 1px;
+  background-color: orange;
+  margin: 5px;
+ }
+}

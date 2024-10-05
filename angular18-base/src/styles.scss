@@ -56,3 +56,23 @@ button.primary {
  padding: 10px;
  border-radius: 5px;
 }
+
+li {
+ & + li {
+  margin-top: 5px;
+ }
+}
+
+.block {
+ background-color: rgba(128, 128, 128, 0.164);
+ box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
+ padding: 20px 20px 30px;
+ border-radius: 10px;
+ & + .block {
+  margin-top: 10px;
+ }
+}
+
+.width-fix-content {
+ width: fit-content;
+}

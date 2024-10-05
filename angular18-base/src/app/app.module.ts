@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HousingLocationComponent } from './components/housing-location/housing-location.component';
 import { NgModelBindingComponent } from './components/ng-model-binding/ng-model-binding.component';
 import { HighLightDirective } from './Directives/high-light.directive';
+import { PipesComponent } from './components/pipes/pipes.component';
 @NgModule({
  declarations: [
   AppComponent,
@@ -19,6 +20,7 @@ import { HighLightDirective } from './Directives/high-light.directive';
   NgModelBindingComponent,
   DirectivesComponent,
   HighLightDirective,
+  PipesComponent,
  ],
  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
  providers: [],
