@@ -13,51 +13,51 @@
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'short' }}</p>
-     'short'
+     short
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'medium' }}</p>
-     'medium'
+     medium
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'long' }}</p>
-     'long'
+     long
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'full' }}</p>
-     'full'
+     full
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'shortDate' }}</p>
-     'shortDate'
+     shortDate
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'mediumDate' }}</p>
-     'mediumDate'
+     mediumDate
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'longDate' }}</p>
-     'longDate'
+     longDate
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'fullDate' }}</p>
-     'fullDate'
+     fullDate
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'shortTime' }}</p>
-     'shortTime'
+     shortTime
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'mediumTime' }}</p>
-     'mediumTime'
+     mediumTime
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'longTime' }}</p>
-     'longTime'
+     longTime
     </li>
     <li>
      <p class="width-fix-content">{{ date | date : 'fullTime' }}</p>
-     'fullTime'
+     fullTime
     </li>
    </ul>
   </div>
@@ -104,20 +104,28 @@
     {{ value | currency : 'currencyCode' : display : 'digitInfo' }}...&lt;/el>
    </p>
    <ul class="original">
-    <li>1234.56789</li>
+    <li>
+     <input placeholder="currency value" [(ngModel)]="currencyValue" type="number" />
+     <input placeholder="currency code" [(ngModel)]="currencyCode" type="text" />
+    </li>
    </ul>
    <ul class="changed">
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | currency }}</p>
-     (defautl)
+     <p class="width-fix-content">{{ currencyValue | currency }}</p>
+     defautl
     </li>
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | currency : 'EUR' }}</p>
-     (currencyCode : EUR)
+     <p class="width-fix-content">{{ currencyValue | currency : 'EUR' }}</p>
+     currencyCode : EUR
     </li>
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | currency : 'USD' : true : '1.2-3' }}</p>
-     (currencyCode : USD ,display : true, DigitsInfo : 1.2-3 )
+     <p class="width-fix-content">{{ currencyValue | currency : 'USD' : true : '1.2-3' }}</p>
+     currencyCode : USD ,display : true, DigitsInfo : 1.2-3
+    </li>
+    <li>
+     <p class="width-fix-content">{{ currencyValue | currency : currencyCode }}</p>
+     currencyCode :
+     {{ currencyCode }}
     </li>
     <a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">Find more currencyCode</a>
    </ul>
@@ -126,20 +134,20 @@
    <li class="title">DecimalPipe</li>
    <p ngNonBindable>Syntax :&lt;el> ... {{ value | number : 'digitInfo' }} ...&lt;/el></p>
    <ul class="original">
-    <li>1234.56789</li>
+    <li><input placeholder="decimal value" [(ngModel)]="decimalValue" type="number" /></li>
    </ul>
    <ul class="changed">
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | number }}</p>
+     <p class="width-fix-content">{{ decimalValue | number }}</p>
      (default)
     </li>
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | number : '1.1-1' }}</p>
+     <p class="width-fix-content">{{ decimalValue | number : '1.1-1' }}</p>
      (DigitsInfo : '1.1-1')
     </li>
     <li>
-     <p class="width-fix-content">{{ 1234.56789 | number : '1.1-2' }}</p>
-     (DigitsInfo : '1.1-2')
+     <p class="width-fix-content">{{ decimalValue | number : '1.1-4' }}</p>
+     (DigitsInfo : '1.1-4')
     </li>
    </ul>
   </div>
@@ -147,20 +155,22 @@
    <li class="title">PercentPipe</li>
    <p ngNonBindable>Syntax :&lt;el> ... {{ value | percent : 'digitInfo' }} ...&lt;/el></p>
    <ul class="original">
-    <li>{{ 0.12345 }}</li>
+    <li>
+     <input placeholder="percent value" [(ngModel)]="percentValue" type="number" />
+    </li>
    </ul>
    <ul class="changed">
     <li>
-     <p class="width-fix-content">{{ 0.12345 | percent }}</p>
+     <p class="width-fix-content">{{ percentValue | percent }}</p>
      (default)
     </li>
     <li>
-     <p class="width-fix-content">{{ 0.12345 | percent : '1.1-1' }}</p>
-     (DigitsInfo : '1.1-1')
+     <p class="width-fix-content">{{ percentValue | percent : '1.1-2' }}</p>
+     (DigitsInfo : '1.1-2')
     </li>
     <li>
-     <p class="width-fix-content">{{ 0.12345 | percent : '1.1-2' }}</p>
-     (DigitsInfo : '1.1-2')
+     <p class="width-fix-content">{{ percentValue | percent : '1.1-4' }}</p>
+     (DigitsInfo : '1.1-4')
     </li>
    </ul>
   </div>

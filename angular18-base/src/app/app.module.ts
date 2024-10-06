@@ -11,6 +11,8 @@ import { HousingLocationComponent } from './components/housing-location/housing-
 import { NgModelBindingComponent } from './components/ng-model-binding/ng-model-binding.component';
 import { HighLightDirective } from './Directives/high-light.directive';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { CustomAsyncPipe, CustomDatePipe, GmailGeneratePipe } from './Pipes/custompipes.pipe';
+import { CustompipesComponent } from './components/custompipes/custompipes.component';
 @NgModule({
  declarations: [
   AppComponent,
@@ -21,6 +23,10 @@ import { PipesComponent } from './components/pipes/pipes.component';
   DirectivesComponent,
   HighLightDirective,
   PipesComponent,
+  CustomDatePipe,
+  CustompipesComponent,
+  GmailGeneratePipe,
+  CustomAsyncPipe,
  ],
  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
  providers: [],

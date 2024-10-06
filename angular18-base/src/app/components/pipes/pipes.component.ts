@@ -9,6 +9,16 @@ import { Observable, Observer } from 'rxjs';
 export class PipesComponent {
  //datePipe
  date = new Date();
+
+ //CurrencyPipe
+ currencyValue!: number;
+ currencyCode!: string;
+
+ //DecimalPipe
+ decimalValue!: number;
+
+ //PercentPipe
+ percentValue!: number;
  //jsonPipe
  json = {
   name: 'John',
@@ -31,7 +41,7 @@ export class PipesComponent {
  onClick() {
   this.supprise = new Promise<string>((resolve) => {
    setTimeout(() => {
-    resolve('Supprise');
+    resolve('Supprise 🎉🎉');
    }, 5000);
   });
   this.countdown = new Promise<number>((resolve) => {

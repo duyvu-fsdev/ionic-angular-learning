@@ -5,6 +5,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { NgModelBindingComponent } from './components/ng-model-binding/ng-model-binding.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { CustompipesComponent } from './components/custompipes/custompipes.component';
 
 const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
  { path: 'basic-knowledge/ng-model-binding', component: NgModelBindingComponent, title: 'Data Binding' },
  { path: 'basic-knowledge/directives', component: DirectivesComponent, title: 'Directives' },
  { path: 'basic-knowledge/pipes', component: PipesComponent, title: 'Pipes' },
+ { path: 'basic-knowledge/custompipes', component: CustompipesComponent, title: 'Custom Pipes' },
 ];
 
 @NgModule({
