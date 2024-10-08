@@ -14,6 +14,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomAsyncPipe, CustomDatePipe, GmailGeneratePipe } from './Pipes/custompipes.pipe';
 import { CustompipesComponent } from './components/custompipes/custompipes.component';
 import { ServicesDiComponent } from './components/services-di/services-di.component';
+import { HttpClientComponent } from './components/http-client/http-client.component';
 
 @NgModule({
  declarations: [
@@ -30,6 +31,7 @@ import { ServicesDiComponent } from './components/services-di/services-di.compon
   GmailGeneratePipe,
   CustomAsyncPipe,
   ServicesDiComponent,
+  HttpClientComponent,
  ],
  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
  providers: [],

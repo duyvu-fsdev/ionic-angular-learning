@@ -7,6 +7,7 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { PipesComponent } from './components/pipes/pipes.component';
 import { CustompipesComponent } from './components/custompipes/custompipes.component';
 import { ServicesDiComponent } from './components/services-di/services-di.component';
+import { HttpClientComponent } from './components/http-client/http-client.component';
 
 const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
  { path: 'basic-knowledge/pipes', component: PipesComponent, title: 'Pipes' },
  { path: 'basic-knowledge/custompipes', component: CustompipesComponent, title: 'Custom Pipes' },
  { path: 'basic-knowledge/services-di', component: ServicesDiComponent, title: 'Services and Dependency Injection' },
+ { path: 'basic-knowledge/http-client', component: HttpClientComponent, title: 'Http Client' },
 ];
 
 @NgModule({

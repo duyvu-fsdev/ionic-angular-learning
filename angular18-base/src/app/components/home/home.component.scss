@@ -28,16 +28,16 @@ button {
  border-radius: 8px;
 }
 
-@media (min-width: 500px) and (max-width: 768px) {
+@media (min-width: 1000px) and (max-width: 1400px) {
  .results {
   grid-template-columns: repeat(2, 1fr);
  }
- input[type='text'] {
+ input {
   width: 70%;
  }
 }
 
-@media (max-width: 499px) {
+@media (max-width: 999px) {
  .results {
   grid-template-columns: 1fr;
  }
