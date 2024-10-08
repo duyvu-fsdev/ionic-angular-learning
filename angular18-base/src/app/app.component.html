@@ -2,8 +2,13 @@
  <div class="container">
   @if (currentPath!= 'basic-knowledge') {
   <div class="left">
-   <h1 id="title">Angular 18 base</h1>
-   <div class="lesson hilight">
+   <div class="left-header">
+    <a [routerLink]="['/']">
+     <img class="home" src="/assets/images/home.png" alt="logo" aria-hidden="true" />
+    </a>
+    <h1 id="title">Angular 18 base</h1>
+   </div>
+   <div class="lesson highlight">
     <a routerLink="/basic-knowledge"> >>> Review basic knowledge Angular 18</a>
    </div>
    <div class="lesson">
@@ -136,7 +141,7 @@
      <li>Update service to use web server instead of local array</li>
     </ul>
    </div>
-   <div class="lesson hilight">
+   <div class="lesson highlight">
     <a [routerLink]="['/basic-knowledge']"> >>> Review basic knowledge Angular 18</a>
    </div>
   </div>
@@ -150,6 +155,12 @@
   </div>
   }@else {
   <div class="left">
+   <div class="left-header">
+    <a [routerLink]="['/']">
+     <img class="home" src="/assets/images/home.png" alt="logo" aria-hidden="true" />
+    </a>
+    <h1 id="title">Angular 18 base</h1>
+   </div>
    <div class="lesson-2">
     <a routerLink="/basic-knowledge/ng-model-binding">1. ngModel - Data/Events/Two-way binding</a>
    </div>
@@ -161,6 +172,9 @@
    </div>
    <div class="lesson-2">
     <a routerLink="/basic-knowledge/custompipes">4. CustomPipes</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/basic-knowledge/services-di">5. Services and Dependency Injection</a>
    </div>
   </div>
   <div class="right">

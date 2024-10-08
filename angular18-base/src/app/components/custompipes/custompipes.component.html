@@ -2,42 +2,44 @@
  <ul>
   <div class="block">
    <li class="title">CustomDatePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | customDate : reverse(boolean) }} ...&lt;/el></p>
-   <ul class="original">
-    <li>{{ date }}</li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | customDate : reverse(boolean) }} ...&lt;/el></p>
+   <ul>
+    <li class="from">{{ date }}</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ date | customDate }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ date | customDate }}</p>
      default - (YYYY/MM/DD - hh:mm:ss)
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | customDate : true }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | customDate : true }}</p>
      reverse : true - (hh:mm:ss - DD/MM/YYYY)
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">GmailGeneratePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | gmailGenerate }} ...&lt;/el></p>
-   <ul class="original">
-    <li><input [(ngModel)]="email" type="email" min="0" /></li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | gmailGenerate }} ...&lt;/el></p>
+   <ul>
+    <li class="from"><input [(ngModel)]="email" type="email" min="0" /></li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ email | gmailGenerate }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ email | gmailGenerate }}</p>
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">CustomAsyncPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | customAsync }} ...&lt;/el></p>
-   <ul class="original">
-    <li>Observable</li>
+   <p class="hl-da" ngNonBindable>
+    Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | customAsync }} ...&lt;/el>
+   </p>
+   <ul>
+    <li class="from">Observable</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ timeObservable | customAsync }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ timeObservable | customAsync }}</p>
     </li>
    </ul>
    <img src="/assets/images/customAsyncPipeHTML.png" alt="customAsyncPipeHTML" aria-hidden="true" />

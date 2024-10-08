@@ -13,6 +13,8 @@ import { HighLightDirective } from './Directives/high-light.directive';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomAsyncPipe, CustomDatePipe, GmailGeneratePipe } from './Pipes/custompipes.pipe';
 import { CustompipesComponent } from './components/custompipes/custompipes.component';
+import { ServicesDiComponent } from './components/services-di/services-di.component';
+
 @NgModule({
  declarations: [
   AppComponent,
@@ -27,6 +29,7 @@ import { CustompipesComponent } from './components/custompipes/custompipes.compo
   CustompipesComponent,
   GmailGeneratePipe,
   CustomAsyncPipe,
+  ServicesDiComponent,
  ],
  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
  providers: [],

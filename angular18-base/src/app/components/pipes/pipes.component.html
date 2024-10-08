@@ -2,128 +2,128 @@
  <ul>
   <div class="block">
    <li class="title">DatePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | date : 'Option' }} ...&lt;/el></p>
-   <ul class="original">
-    <li>{{ date }}</li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | date : 'Option' }} ...&lt;/el></p>
+   <ul>
+    <li class="from">{{ date }}</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ date | date }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ date | date }}</p>
      default
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'short' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'short' }}</p>
      short
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'medium' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'medium' }}</p>
      medium
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'long' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'long' }}</p>
      long
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'full' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'full' }}</p>
      full
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'shortDate' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'shortDate' }}</p>
      shortDate
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'mediumDate' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'mediumDate' }}</p>
      mediumDate
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'longDate' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'longDate' }}</p>
      longDate
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'fullDate' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'fullDate' }}</p>
      fullDate
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'shortTime' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'shortTime' }}</p>
      shortTime
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'mediumTime' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'mediumTime' }}</p>
      mediumTime
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'longTime' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'longTime' }}</p>
      longTime
     </li>
-    <li>
-     <p class="width-fix-content">{{ date | date : 'fullTime' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ date | date : 'fullTime' }}</p>
      fullTime
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">UpperCasePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | uppercase }} ...&lt;/el></p>
-   <ul class="original">
-    <li>UpperCasePipe</li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | uppercase }} ...&lt;/el></p>
+   <ul>
+    <li class="from">UpperCasePipe</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ 'UpperCasePipe' | uppercase }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ 'UpperCasePipe' | uppercase }}</p>
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">LowerCasePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | lowercase }} ...&lt;/el></p>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | lowercase }} ...&lt;/el></p>
    <ul class="original">
-    <li>{{ 'LowerCasePipe' }}</li>
+    <li class="from">LowerCasePipe</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ 'LowerCasePipe' | lowercase }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ 'LowerCasePipe' | lowercase }}</p>
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">TitleCasePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | titlecase }} ...&lt;/el></p>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | titlecase }} ...&lt;/el></p>
    <ul class="original">
-    <li>{{ 'title case pipe' }}</li>
+    <li class="from">title case pipe</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ 'title case pipe' | titlecase }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ 'title case pipe' | titlecase }}</p>
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">CurrencyPipe</li>
-   <p ngNonBindable>
+   <p class="hl-da" ngNonBindable>
     Syntax :&lt;el> ...
     {{ value | currency : 'currencyCode' : display : 'digitInfo' }}...&lt;/el>
    </p>
-   <ul class="original">
-    <li>
+   <ul>
+    <li class="from">
      <input placeholder="currency value" [(ngModel)]="currencyValue" type="number" />
      <input placeholder="currency code" [(ngModel)]="currencyCode" type="text" />
     </li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ currencyValue | currency }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ currencyValue | currency }}</p>
      defautl
     </li>
-    <li>
-     <p class="width-fix-content">{{ currencyValue | currency : 'EUR' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ currencyValue | currency : 'EUR' }}</p>
      currencyCode : EUR
     </li>
-    <li>
-     <p class="width-fix-content">{{ currencyValue | currency : 'USD' : true : '1.2-3' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ currencyValue | currency : 'USD' : true : '1.2-3' }}</p>
      currencyCode : USD ,display : true, DigitsInfo : 1.2-3
     </li>
-    <li>
-     <p class="width-fix-content">{{ currencyValue | currency : currencyCode }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ currencyValue | currency : currencyCode }}</p>
      currencyCode :
      {{ currencyCode }}
     </li>
@@ -132,44 +132,44 @@
   </div>
   <div class="block">
    <li class="title">DecimalPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | number : 'digitInfo' }} ...&lt;/el></p>
-   <ul class="original">
-    <li><input placeholder="decimal value" [(ngModel)]="decimalValue" type="number" /></li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | number : 'digitInfo' }} ...&lt;/el></p>
+   <ul>
+    <li class="from"><input placeholder="decimal value" [(ngModel)]="decimalValue" type="number" /></li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ decimalValue | number }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ decimalValue | number }}</p>
      (default)
     </li>
-    <li>
-     <p class="width-fix-content">{{ decimalValue | number : '1.1-1' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ decimalValue | number : '1.1-1' }}</p>
      (DigitsInfo : '1.1-1')
     </li>
-    <li>
-     <p class="width-fix-content">{{ decimalValue | number : '1.1-4' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ decimalValue | number : '1.1-4' }}</p>
      (DigitsInfo : '1.1-4')
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">PercentPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | percent : 'digitInfo' }} ...&lt;/el></p>
-   <ul class="original">
-    <li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | percent : 'digitInfo' }} ...&lt;/el></p>
+   <ul>
+    <li class="from">
      <input placeholder="percent value" [(ngModel)]="percentValue" type="number" />
     </li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ percentValue | percent }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ percentValue | percent }}</p>
      (default)
     </li>
-    <li>
-     <p class="width-fix-content">{{ percentValue | percent : '1.1-2' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ percentValue | percent : '1.1-2' }}</p>
      (DigitsInfo : '1.1-2')
     </li>
-    <li>
-     <p class="width-fix-content">{{ percentValue | percent : '1.1-4' }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ percentValue | percent : '1.1-4' }}</p>
      (DigitsInfo : '1.1-4')
     </li>
    </ul>
@@ -177,13 +177,13 @@
   <div class="block hasImg">
    <div>
     <li class="title">JsonPipe</li>
-    <p ngNonBindable>Syntax :&lt;el> ... {{ value | json }} ...&lt;/el></p>
-    <ul class="original">
-     <li>{{ json }}</li>
+    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | json }} ...&lt;/el></p>
+    <ul>
+     <li class="from">{{ json }}</li>
     </ul>
-    <ul class="changed">
-     <li>
-      <p class="width-fix-content">{{ json | json }}</p>
+    <ul>
+     <li class="to">
+      <p class="hl-ss">{{ json | json }}</p>
      </li>
     </ul>
    </div>
@@ -191,48 +191,52 @@
   </div>
   <div class="block">
    <li class="title">SlicePipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | slice : start : end }} ...&lt;/el></p>
-   <ul class="original">
-    <li>{{ 'Hello Angular' }}</li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | slice : start : end }} ...&lt;/el></p>
+   <ul>
+    <li class="from">{{ 'Hello Angular' }}</li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ 'Hello Angular' | slice : 0 : 5 }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ 'Hello Angular' | slice : 0 : 5 }}</p>
+     ( slice : 0 : 5)
     </li>
    </ul>
    <div class="hr"></div>
-   <ul class="original">
-    <li>
+   <ul>
+    <li class="from">
      {{ [1, 2, 3, 4, 5, 6] }}
      ({{ 'array : [1, 2, 3, 4, 5, 6]' }})
     </li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ [1, 2, 3, 4, 5, 6] | slice : 1 : 3 }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ [1, 2, 3, 4, 5, 6] | slice : 1 : 3 }}</p>
+     ( slice : 1 : 3)
     </li>
    </ul>
   </div>
   <div class="block">
    <li class="title">AsyncPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | async }} ...&lt;/el></p>
-   <ul class="original">
-    <li>Observables</li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | async }} ...&lt;/el></p>
+   <ul>
+    <li class="from">Observables</li>
    </ul>
-   <ul class="changed">
-    <li>{{ time | async }}</li>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ time | async }}</p>
+    </li>
    </ul>
    <img src="/assets/images/observablesAsyncPipe.png" alt="observablesAsyncPipe" aria-hidden="true" />
    <div class="hr"></div>
-   <ul class="original">
-    <li>Promise</li>
+   <ul>
+    <li class="from">Promise</li>
    </ul>
    <ul class="changed">
     <button class="primary" style="margin-bottom: 5px" (click)="onClick()">
      Click and countdown {{ (countdown | async) || countdown$ }}
     </button>
-    <li>
-     <p class="width-fix-content">{{ supprise | async }}</p>
+    <li class="to">
+     <p class="hl-ss">{{ supprise | async }}</p>
     </li>
    </ul>
    <img src="/assets/images/promisAsynsPipe-1.png" alt="promisAsynsPipe" aria-hidden="true" />
@@ -240,13 +244,13 @@
   </div>
   <div class="block">
    <li class="title">I18nPluralPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | i18nPlural : mapping }} ...&lt;/el></p>
-   <ul class="original">
-    <li><input [(ngModel)]="I18nPluralPipe" type="number" min="0" /></li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | i18nPlural : mapping }} ...&lt;/el></p>
+   <ul>
+    <li class="from"><input [(ngModel)]="I18nPluralPipe" type="number" min="0" /></li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ I18nPluralPipe | i18nPlural : messageMapping }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ I18nPluralPipe | i18nPlural : messageMapping }}</p>
     </li>
    </ul>
    <img src="/assets/images/I18nPluralPipe.png" alt="I18nPluralPipe" aria-hidden="true" />
@@ -254,9 +258,9 @@
   </div>
   <div class="block">
    <li class="title">I18nSelectPipe</li>
-   <p ngNonBindable>Syntax :&lt;el> ... {{ value | i18nSelect : mapping }} ...&lt;/el></p>
-   <ul class="original">
-    <li>
+   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | i18nSelect : mapping }} ...&lt;/el></p>
+   <ul>
+    <li class="from">
      <select name="male" id="male" [(ngModel)]="gender">
       <option value="male">Male</option>
       <option value="female">Female</option>
@@ -264,9 +268,9 @@
      </select>
     </li>
    </ul>
-   <ul class="changed">
-    <li>
-     <p class="width-fix-content">{{ gender | i18nSelect : genderMapping }}</p>
+   <ul>
+    <li class="to">
+     <p class="hl-ss">{{ gender | i18nSelect : genderMapping }}</p>
     </li>
    </ul>
    <img src="/assets/images/I18nSelectPipe.png" alt="I18nPluralPipe" aria-hidden="true" />

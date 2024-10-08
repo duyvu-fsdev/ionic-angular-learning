@@ -1,0 +1,36 @@
+<div class="block">
+ <ul>
+  <li class="df">
+   Create AuthService :
+   <p class="hl-da">ng g s services/auth --skip-tests</p>
+  </li>
+  <div class="hr"></div>
+  <p class="sub-title">With getter</p>
+  @if (hasUser) {
+  <li class="n">
+   <p class="hl-ss">You are logged in</p>
+   <button class="primary" (click)="logout()">Logout</button>
+  </li>
+  }@else {
+  <li class="n">
+   <p class="hl-ss">You are not logged in</p>
+   <button class="primary" (click)="login()">Login</button>
+  </li>
+  }
+  <div class="hr"></div>
+  <p class="sub-title">With BehaviorSubject</p>
+  @if (hasUser$) {
+  <li class="n">
+   <p class="hl-ss">You are logged in</p>
+   <button class="primary" (click)="logout2()">Logout</button>
+  </li>
+  }@else {
+  <li class="n">
+   <p class="hl-ss">You are not logged in</p>
+   <button class="primary" (click)="login2()">Login</button>
+  </li>
+  }
+ </ul>
+ <img src="/assets/images/services1.png" alt="services1" aria-hidden="true" />
+ <img src="/assets/images/services2.png" alt="services2" aria-hidden="true" />
+</div>

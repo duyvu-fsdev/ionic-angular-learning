@@ -4,7 +4,7 @@ import { interval, map, Observable } from 'rxjs';
 @Component({
  selector: 'app-custompipes',
  templateUrl: './custompipes.component.html',
- styleUrl: './custompipes.component.scss',
+ styleUrls: ['./custompipes.component.scss', '../common.scss'],
 })
 export class CustompipesComponent {
  date = new Date();

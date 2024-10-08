@@ -1,0 +1,117 @@
+input {
+ margin-top: 5px;
+ border: solid 1px var(--primary-color);
+ border-radius: 4px;
+ padding: 4px 8px;
+ display: inline-block;
+}
+
+p {
+ margin: 10px 0;
+}
+
+button {
+ padding: 5px 10px;
+ border: solid 1px var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ border-radius: 8px;
+ min-height: 30px;
+}
+
+p.hl-da,
+p.hl-ss {
+ background-color: yellow;
+ padding: 5px 10px;
+ color: red;
+ font-weight: bold;
+ margin: 1px 4px;
+ width: fit-content;
+ border-radius: 6px;
+ border: 1px solid currentColor;
+ min-height: 30px;
+}
+
+p.hl-ss {
+ background-color: #fff;
+ color: #42d96b;
+}
+
+li.title {
+ list-style-type: decimal;
+ color: var(--primary-color);
+ margin: 10px;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+li.df,
+li.n,
+li.from,
+li.to,
+li.result {
+ list-style-type: none;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ display: flex;
+ align-items: center;
+ min-height: 32px;
+ &::before {
+  color: var(--primary-color);
+  margin-right: 5px;
+ }
+}
+
+li.from {
+ border-bottom: 1px solid orange;
+ padding-bottom: 5px;
+ margin-bottom: 5px;
+ &::before {
+  content: 'From : ';
+ }
+}
+
+li.to {
+ &::before {
+  content: 'To : ';
+ }
+}
+
+li.result {
+ &::before {
+  content: 'Result : ';
+ }
+}
+
+li.df {
+ &::before {
+  content: '💠';
+ }
+}
+
+a {
+ display: block;
+ margin-top: 5px;
+}
+.block {
+ padding-left: 40px;
+ width: fit-content;
+}
+.hasImg {
+ display: flex;
+ gap: 10px;
+ flex-direction: row;
+}
+img {
+ border-radius: 10px;
+ width: 100%;
+}
+img.square {
+ width: 150px;
+ height: 150px;
+}
+.hr {
+ height: 2px;
+ background-color: var(--primary-color);
+ margin: 5px 0;
+}

@@ -4,7 +4,7 @@ import { Observable, Observer } from 'rxjs';
 @Component({
  selector: 'app-pipes',
  templateUrl: './pipes.component.html',
- styleUrl: './pipes.component.scss',
+ styleUrls: ['./pipes.component.scss', '../common.scss'],
 })
 export class PipesComponent {
  //datePipe
@@ -41,7 +41,7 @@ export class PipesComponent {
  onClick() {
   this.supprise = new Promise<string>((resolve) => {
    setTimeout(() => {
-    resolve('Supprise 🎉🎉');
+    resolve('Supprise');
    }, 5000);
   });
   this.countdown = new Promise<number>((resolve) => {
