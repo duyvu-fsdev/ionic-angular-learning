@@ -5,10 +5,15 @@ import { Observable, Subscription } from 'rxjs';
  name: 'customDate',
 })
 export class CustomDatePipe implements PipeTransform {
- transform(time: Date, reverse?: boolean): string {
-  console.log(reverse);
+ transform(value: Date | string, reverse?: boolean): string {
+  let time: Date;
 
-  if (!time) return '';
+  if (!value) return '';
+  if (value instanceof Date) {
+   time = value;
+  } else {
+   time = new Date(value);
+  }
   if (!reverse)
    return (
     time.getFullYear() +
@@ -22,7 +27,7 @@ export class CustomDatePipe implements PipeTransform {
      if (time.getDate() > 9) return time.getDate();
      else return `0${time.getDate()}`;
     })() +
-    ' - ' +
+    '  ' +
     (() => {
      if (time.getHours() > 9) return time.getHours();
      else return `0${time.getHours()}`;
@@ -54,7 +59,7 @@ export class CustomDatePipe implements PipeTransform {
      if (time.getSeconds() > 9) return time.getSeconds();
      else return `0${time.getSeconds()}`;
     })() +
-    ' - ' +
+    '  ' +
     (() => {
      if (time.getDate() > 9) return time.getDate();
      else return `0${time.getDate()}`;
@@ -108,5 +113,13 @@ export class CustomAsyncPipe implements PipeTransform {
   if (this.subscription) {
    this.subscription.unsubscribe();
   }
+ }
+}
+
+@Pipe({ name: 'customCurrency' })
+export class CustomCurrencyPipe implements PipeTransform {
+ transform(valueInput: number, currencyCode?: string): string {
+  const value = !valueInput || isNaN(valueInput) ? 0 : valueInput;
+  return `${value.toLocaleString('vi-VN', { style: 'currency', currency: currencyCode || 'VND' })}`;
  }
 }

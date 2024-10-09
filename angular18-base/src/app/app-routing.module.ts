@@ -8,6 +8,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { CustompipesComponent } from './components/custompipes/custompipes.component';
 import { ServicesDiComponent } from './components/services-di/services-di.component';
 import { HttpClientComponent } from './components/http-client/http-client.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
  { path: 'basic-knowledge/custompipes', component: CustompipesComponent, title: 'Custom Pipes' },
  { path: 'basic-knowledge/services-di', component: ServicesDiComponent, title: 'Services and Dependency Injection' },
  { path: 'basic-knowledge/http-client', component: HttpClientComponent, title: 'Http Client' },
+ { path: 'basic-knowledge/menu', component: MenuComponent, title: 'CURD Menu' },
 ];
 
 @NgModule({

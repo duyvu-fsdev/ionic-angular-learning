@@ -1,50 +1,54 @@
 <div class="pipes">
  <ul>
   <div class="block">
-   <li class="title">CustomDatePipe</li>
-   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | customDate : reverse(boolean) }} ...&lt;/el></p>
-   <ul>
-    <li class="from">{{ date }}</li>
-   </ul>
-   <ul>
-    <li class="to">
-     <p class="hl-ss">{{ date | customDate }}</p>
-     default - (YYYY/MM/DD - hh:mm:ss)
-    </li>
-    <li class="to">
-     <p class="hl-ss">{{ date | customDate : true }}</p>
-     reverse : true - (hh:mm:ss - DD/MM/YYYY)
-    </li>
-   </ul>
+   <div class="inner-block">
+    <li class="title">CustomDatePipe</li>
+    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | customDate : reverse(boolean) }} ...&lt;/el></p>
+    <ul>
+     <li class="from">{{ date }}</li>
+    </ul>
+    <ul>
+     <li class="to">
+      <p class="hl-ss">{{ date | customDate }}</p>
+      default - (YYYY/MM/DD - hh:mm:ss)
+     </li>
+     <li class="to">
+      <p class="hl-ss">{{ date | customDate : true }}</p>
+      reverse : true - (hh:mm:ss - DD/MM/YYYY)
+     </li>
+    </ul>
+   </div>
   </div>
   <div class="block">
-   <li class="title">GmailGeneratePipe</li>
-   <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | gmailGenerate }} ...&lt;/el></p>
-   <ul>
-    <li class="from"><input [(ngModel)]="email" type="email" min="0" /></li>
-   </ul>
-   <ul>
-    <li class="to">
-     <p class="hl-ss">{{ email | gmailGenerate }}</p>
-    </li>
-   </ul>
+   <div class="inner-block">
+    <li class="title">GmailGeneratePipe</li>
+    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | gmailGenerate }} ...&lt;/el></p>
+    <ul>
+     <li class="from"><input [(ngModel)]="email" type="email" min="0" /></li>
+    </ul>
+    <ul>
+     <li class="to">
+      <p class="hl-ss">{{ email | gmailGenerate }}</p>
+     </li>
+    </ul>
+   </div>
   </div>
   <div class="block">
-   <li class="title">CustomAsyncPipe</li>
-   <p class="hl-da" ngNonBindable>
-    Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | customAsync }} ...&lt;/el>
-   </p>
-   <ul>
-    <li class="from">Observable</li>
-   </ul>
-   <ul>
-    <li class="to">
-     <p class="hl-ss">{{ timeObservable | customAsync }}</p>
-    </li>
-   </ul>
-   <img src="/assets/images/customAsyncPipeHTML.png" alt="customAsyncPipeHTML" aria-hidden="true" />
-   <img src="/assets/images/customAsync-1.png" alt="customAsyncTs" aria-hidden="true" />
-   <img src="/assets/images/customAsyncPipe.png" alt="customAsyncPipe" aria-hidden="true" />
+   <div class="inner-block">
+    <li class="title">CustomAsyncPipe</li>
+    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ Observable / Subscribable / Promise | customAsync }} ...&lt;/el></p>
+    <ul>
+     <li class="from">Observable</li>
+    </ul>
+    <ul>
+     <li class="to">
+      <p class="hl-ss">{{ timeObservable | customAsync }}</p>
+     </li>
+    </ul>
+    <img src="/assets/images/customAsyncPipeHTML.png" alt="customAsyncPipeHTML" aria-hidden="true" />
+    <img src="/assets/images/customAsync-1.png" alt="customAsyncTs" aria-hidden="true" />
+    <img src="/assets/images/customAsyncPipe.png" alt="customAsyncPipe" aria-hidden="true" />
+   </div>
   </div>
  </ul>
 </div>

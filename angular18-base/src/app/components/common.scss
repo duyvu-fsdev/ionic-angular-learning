@@ -10,15 +10,6 @@ p {
  margin: 10px 0;
 }
 
-button {
- padding: 5px 10px;
- border: solid 1px var(--primary-color);
- background: var(--primary-color);
- color: white;
- border-radius: 8px;
- min-height: 30px;
-}
-
 p.hl-da,
 p.hl-ss {
  background-color: yellow;
@@ -93,9 +84,8 @@ a {
  display: block;
  margin-top: 5px;
 }
-.block {
- padding-left: 40px;
- width: fit-content;
+.inner-block {
+ padding-left: 20px;
 }
 .hasImg {
  display: flex;

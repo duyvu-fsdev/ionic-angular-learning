@@ -73,17 +73,17 @@ app.put('/api/menu/:id', (req, res, next) => {
   category: req.body.category,
   updatedAt: req.body.updatedAt,
  };
+
  db.run(
   `UPDATE menu SET
          name = ?, 
          price = ?,
          category = ?, 
-         updatedAt = ?, 
-         WHERE id = ?`,
+         updatedAt = ? 
+       WHERE id = ?`,
   [data.name, data.price, data.category, data.updatedAt, req.params.id],
   function (err, result) {
    if (err) {
-    console.log(err);
     res.status(400).json({ error: res.message });
     return;
    }

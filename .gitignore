@@ -16,6 +16,7 @@ log.txt
 # env
 .env
 
+
 */.sourcemaps
 */.versions
 */coverage
@@ -73,3 +74,5 @@ testem.log
 Thumbs.db
 */uploads
 */android
+
+*/menu-rest-api/menudb.sqlite

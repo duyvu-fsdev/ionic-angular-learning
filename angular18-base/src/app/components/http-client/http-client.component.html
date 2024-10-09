@@ -1,52 +1,68 @@
 <div>
  <ul>
   <div class="block">
-   <li class="title">Create Menu REST API</li>
-   <ul>
-    <li class="df">Create menu-rest-api folder</li>
-    <li class="df"><p class="hl-da">cd .\menu-rest-api\</p></li>
-    <li class="df"><p class="hl-da">npm init</p></li>
-    <li class="df">
-     Name the project and select entry point as
-     <p class="hl-da">server.js</p>
-    </li>
-    <li class="df"><p class="hl-da">npm install express sqlite3 cors</p></li>
-    <li class="df">
-     Create
-     <p class="hl-da">server.js</p>
-     &
-     <p class="hl-da">sqlitedb.js</p>
-     files
-    </li>
-    <li class="df">Check code on github</li>
-    <li class="df">
-     Finish
-     <p class="hl-da">npm run start</p>
-    </li>
-    <li class="df">Api menu list :</li>
-    <ul style="margin-left: 40px; list-style-type: disc">
-     <li>
-      Get all menus with get method
-      <p class="hl-da">http://localhost:8000/api/menu</p>
+   <div class="inner-block">
+    <li class="title">Create Menu REST API</li>
+    <ul>
+     <li class="df">Create menu-rest-api folder</li>
+     <li class="df"><p class="hl-da">cd .\menu-rest-api\</p></li>
+     <li class="df"><p class="hl-da">npm init</p></li>
+     <li class="df">
+      Name the project and select entry point as
+      <p class="hl-da">server.js</p>
      </li>
-     <li>
-      Get menu by id with get method
-      <p class="hl-da">http://localhost:8000/api/menu/:id</p>
+     <li class="df"><p class="hl-da">npm install express sqlite3 cors</p></li>
+     <li class="df">
+      Create
+      <p class="hl-da">server.js</p>
+      &
+      <p class="hl-da">sqlitedb.js</p>
+      files
      </li>
-     <li>
-      Create (post) new menu with post method
-      <p class="hl-da">http://localhost:8000/api/menu</p>
+     <li class="df">Check code on github</li>
+     <div style="padding-left: 40px">
+      <a href="https://github.com/duyvu-fsdev/ionic-angular-learning/blob/main/menu-rest-api/server.js" target="_blank"
+       >Get code server.js</a
+      >
+      <a href="https://github.com/duyvu-fsdev/ionic-angular-learning/blob/main/menu-rest-api/sqlitedb.js" target="_blank"
+       >Get code sqlitedb.js</a
+      >
+     </div>
+     <li class="df">
+      Finish
+      <p class="hl-da">npm run start</p>
      </li>
-     <li>
-      Update menu by id with put method
-      <p class="hl-da">http://localhost:8000/api/menu/:id</p>
-     </li>
-     <li>
-      Delete menu by id with delete method
-      <p class="hl-da">http://localhost:8000/api/menu/:id</p>
-     </li>
+     <li class="df">Api menu list :</li>
+     <ul style="margin-left: 40px; list-style-type: disc">
+      <li>
+       Get all menus with get method
+       <p class="hl-da">http://localhost:8000/api/menu</p>
+      </li>
+      <li>
+       Get menu by id with get method
+       <p class="hl-da">http://localhost:8000/api/menu/:id</p>
+      </li>
+      <li>
+       Create (post) new menu with post method
+       <p class="hl-da">http://localhost:8000/api/menu</p>
+      </li>
+      <li>
+       Update menu by id with put method
+       <p class="hl-da">http://localhost:8000/api/menu/:id</p>
+      </li>
+      <li>
+       Delete menu by id with delete method
+       <p class="hl-da">http://localhost:8000/api/menu/:id</p>
+      </li>
+     </ul>
     </ul>
-   </ul>
+   </div>
+  </div>
+  <div class="block">
+   <div class="inner-block">
+    <li class="title">CURD menu</li>
+    <button class="primary" routerLink="/basic-knowledge/menu">👉 Go to menu page 👈</button>
+   </div>
   </div>
  </ul>
 </div>

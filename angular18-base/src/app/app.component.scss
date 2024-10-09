@@ -93,16 +93,16 @@
  flex: 1;
  box-shadow: 0 0 3px 0px var(--primary-color);
  overflow-y: scroll;
- height: 100vh;
- header {
+ height: 100%;
+ .header {
+  background-color: rgb(0, 0, 0);
   display: block;
-  height: 60px;
-  padding: var(--content-padding);
   box-shadow: 0px 5px 25px var(--shadow-color);
   margin: 5px;
   color: var(--primary-color);
  }
  .main-content {
+  // position: relative;
   padding: 10px;
  }
 }

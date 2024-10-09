@@ -1,0 +1,79 @@
+<div style="position: relative">
+ <ul>
+  <li
+   class="title"
+   style="
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    border-bottom: 1px solid currentColor;
+    padding: 10px;
+   "
+  >
+   Menu <button class="primary" (click)="onAdd()">Add</button>
+  </li>
+ </ul>
+
+ <div class="table">
+  <div class="table-row header-row">
+   <div class="table-cell" style="max-width: 50px">STT</div>
+   <div class="table-cell">Name</div>
+   <div class="table-cell">Price</div>
+   <div class="table-cell">Category</div>
+   <div class="table-cell">Created At</div>
+   <div class="table-cell">Updated At</div>
+   <div class="table-cell">Actions</div>
+  </div>
+  @for (item of menus; track $index) {
+  <div class="table-row">
+   <div class="table-cell" style="max-width: 50px">{{ $index + 1 }}</div>
+   <div class="table-cell">{{ item.name | titlecase }}</div>
+   <div class="table-cell">{{ item.price | customCurrency : 'VND' }}</div>
+   <div class="table-cell">{{ item.category | titlecase }}</div>
+   <div class="table-cell">{{ item.createdAt | customDate }}</div>
+   <div class="table-cell">{{ item.updatedAt | customDate }}</div>
+   <div class="table-cell">
+    <div style="display: flex; gap: 5px; justify-content: center">
+     <button class="wn" (click)="onEdit(item)">Edit</button>
+     <button class="da" (click)="onDelete(item)">Delete</button>
+    </div>
+   </div>
+  </div>
+  }
+ </div>
+
+ @if (onAdding|| onEditing|| onDeleting) {
+ <div style="position: fixed; top: 0; bottom: 0; right: 0; left: 0">
+  <div style="width: 100%; height: 100%; position: relative">
+   <div style="position: absolute; background-color: #cccccc90; width: 100%; height: 100%" (click)="cancle()"></div>
+   <div
+    class="block"
+    style="z-index: 999; background-color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"
+   >
+    <!-- <h2>@if ( onAdding ) { Create new menu } @else if (onEditing) {Edit}@else if (onDeleting) {Delete}</h2> -->
+    <form style="display: flex; flex-direction: column; gap: 5px" (onsubmit)="onSubmit()" [formGroup]="formData" autocomplete="off">
+     @if (!onDeleting) {
+     <input type="text" placeholder="Enter name" formControlName="name" name="name" (change)="checkDirty()" />
+     <input type="number" placeholder="Enter price" formControlName="price" name="price" (change)="checkDirty()" />
+     <input type="text" placeholder="Enter Category" formControlName="category" name="category" (change)="checkDirty()" />
+     }@else {
+     <p class="hl-da">Do you want to delete "{{ menuSelected.name | titlecase }}"</p>
+     }
+
+     <div style="display: flex; justify-content: center; gap: 5px; margin-top: 10px">
+      @if ( onAdding ) {
+      <button [disabled]="!formData.valid" class="primary" type="submit" (click)="onSubmit()">Create</button>
+      } @else if (onEditing) {
+      <button [disabled]="!formData.valid || !isFormDirty" class="primary" type="submit" (click)="onSubmit()">Update</button>
+      }@else if (onDeleting) {
+      <button class="da" type="submit" (click)="onSubmit()">Yes</button>
+      }
+      <button class="wn" type="button" (click)="cancle()">Cancle</button>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+ }
+</div>

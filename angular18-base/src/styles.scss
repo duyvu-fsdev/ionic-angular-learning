@@ -28,24 +28,47 @@ body {
 :root {
  --primary-color: #605dc8;
  --secondary-color: #8b89e6;
+ --warning-color: orange;
+ --danger-color: red;
  --accent-color: #e8e7fa;
  --shadow-color: #e8e8e8;
 }
 button {
  cursor: pointer;
+ display: flex;
+ align-items: center;
+ padding: 5px 10px;
+ border-radius: 8px;
+ min-height: 30px;
+ &:hover {
+  opacity: 0.5;
+ }
+ &:active {
+  opacity: 1;
+ }
 }
 
 button:disabled {
- opacity: 0.5;
- cursor: auto;
+ opacity: 0.3 !important;
+ cursor: auto !important;
 }
 
 button.primary {
- padding: 10px;
  border: solid 1px var(--primary-color);
  background: var(--primary-color);
  color: white;
- border-radius: 8px;
+}
+
+button.wn {
+ border: solid 1px var(--warning-color);
+ background: var(--warning-color);
+ color: white;
+}
+
+button.da {
+ border: solid 1px var(--danger-color);
+ background: var(--danger-color);
+ color: white;
 }
 
 .component-container {
@@ -64,11 +87,22 @@ li {
 }
 
 .block {
+ position: relative;
  background-color: rgba(128, 128, 128, 0.164);
  box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
- padding: 20px 20px 30px;
+ padding: 20px;
  border-radius: 10px;
  & + .block {
+  margin-top: 10px;
+ }
+}
+
+.sub-block {
+ background-color: rgba(128, 128, 128, 0.164);
+ box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
+ padding: 10px;
+ border-radius: 10px;
+ & + .sub-block {
   margin-top: 10px;
  }
 }
