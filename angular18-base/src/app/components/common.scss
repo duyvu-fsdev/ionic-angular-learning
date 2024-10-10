@@ -92,9 +92,17 @@ a {
  gap: 10px;
  flex-direction: row;
 }
+
+.img-block {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
 img {
  border-radius: 10px;
  width: 100%;
+ max-width: 900px;
 }
 img.square {
  width: 150px;

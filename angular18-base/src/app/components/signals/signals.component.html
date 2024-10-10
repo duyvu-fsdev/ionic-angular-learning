@@ -1,0 +1,85 @@
+<ul>
+ <div class="block">
+  <div class="inner-block">
+   <li class="title">{{ 'simple example comparing signal and rxjs' | titlecase }}</li>
+   <div style="display: flex; gap: 10px">
+    <div
+     style="
+      background-color: rgba(128, 128, 128, 0.164);
+      box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
+      padding: 10px;
+      border-radius: 10px;
+     "
+    >
+     <div class="inner-block">
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px">
+       <p class="title">Use Signal</p>
+       <div style="display: flex; gap: 10px; margin-bottom: 10px">
+        <button class="primary" (click)="decrement2()">Decrement</button>
+        <p class="hl-ss">{{ counter2() }}</p>
+        <button class="primary" (click)="increment2()">Increment</button>
+       </div>
+      </div>
+      <div class="img-block">
+       <img src="/assets/images/signal4.png" alt="signal" title="template" />
+       <img src="/assets/images/signal2.png" alt="signal" title="component" />
+      </div>
+     </div>
+    </div>
+    <div
+     style="
+      background-color: rgba(128, 128, 128, 0.164);
+      box-shadow: 2px 2px 3px 0px rgba(0, 0, 255, 0.363);
+      padding: 10px;
+      border-radius: 10px;
+     "
+    >
+     <div class="inner-block">
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px">
+       <p class="title">Use rxjs</p>
+       <div style="display: flex; gap: 10px; margin-bottom: 10px">
+        <button class="primary" (click)="decrement()">Decrement</button>
+        <p class="hl-ss">{{ counter }}</p>
+        <button class="primary" (click)="increment()">Increment</button>
+       </div>
+      </div>
+     </div>
+     <div class="img-block">
+      <img src="/assets/images/signal3.png" alt="signal" title="template" />
+      <img src="/assets/images/signal.png" alt="signal" title="component" />
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="block">
+  <div class="inner-block">
+   <li class="title">{{ 'Use Signal in service' | titlecase }}</li>
+   <div class="table">
+    <div class="table-row header-row">
+     <div class="table-cell" style="max-width: 50px">STT</div>
+     <div class="table-cell">Name</div>
+     <div class="table-cell">Price</div>
+     <div class="table-cell">Category</div>
+     <div class="table-cell">Created At</div>
+     <div class="table-cell">Updated At</div>
+    </div>
+    @for (menu of menuService.menus(); track $index) {
+    <div class="table-row">
+     <div class="table-cell" style="max-width: 50px">{{ $index + 1 }}</div>
+     <div class="table-cell">{{ menu.name | titlecase }}</div>
+     <div class="table-cell">{{ menu.price | customCurrency : 'VND' }}</div>
+     <div class="table-cell">{{ menu.category | titlecase }}</div>
+     <div class="table-cell">{{ menu.createdAt | customDate }}</div>
+     <div class="table-cell">{{ menu.updatedAt | customDate }}</div>
+    </div>
+    }
+   </div>
+   <div class="img-block">
+    <img src="/assets/images/signal5.png" alt="signal" title="template" />
+    <img src="/assets/images/signal6.png" alt="signal" title="component" />
+    <img src="/assets/images/signal7.png" alt="signal" title="service" />
+   </div>
+  </div>
+ </div>
+</ul>

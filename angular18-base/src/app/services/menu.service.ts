@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject, lastValueFrom } from 'rxjs';
 
 @Injectable({
@@ -41,5 +41,13 @@ export class MenuService {
  }
  deleteMenu(id: any) {
   return this.httpClient.delete(`${this.url}/${id}`, this.httpOptions);
+ }
+
+ menus = signal<any>([]);
+ fetchData() {
+  this.httpClient.get(this.url, this.httpOptions).subscribe({
+   next: (response) => this.menus.set(response),
+   error: (e) => console.log(e),
+  });
  }
 }
