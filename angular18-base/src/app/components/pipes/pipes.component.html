@@ -121,7 +121,7 @@
     <ul>
      <li class="to">
       <p class="hl-ss">{{ currencyValue | currency }}</p>
-      defautl
+      default
      </li>
      <li class="to">
       <p class="hl-ss">{{ currencyValue | currency : 'EUR' }}</p>
@@ -188,21 +188,25 @@
     </ul>
    </div>
   </div>
-  <div class="block hasImg">
+
+  <div class="block">
    <div class="inner-block hasImg">
-    <li class="title">JsonPipe</li>
-    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | json }} ...&lt;/el></p>
-    <ul>
-     <li class="from">{{ json }}</li>
-    </ul>
-    <ul>
-     <li class="to">
-      <p class="hl-ss">{{ json | json }}</p>
-     </li>
-    </ul>
+    <div>
+     <li class="title">JsonPipe</li>
+     <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | json }} ...&lt;/el></p>
+     <ul>
+      <li class="from">{{ json }}</li>
+     </ul>
+     <ul>
+      <li class="to">
+       <p class="hl-ss">{{ json | json }}</p>
+      </li>
+     </ul>
+    </div>
+    <img class="square" src="/assets/images/jsonPipe.png" alt="jsonPipe" aria-hidden="true" />
    </div>
-   <img class="square" src="/assets/images/jsonPipe.png" alt="jsonPipe" aria-hidden="true" />
   </div>
+
   <div class="block">
    <div class="inner-block">
     <li class="title">SlicePipe</li>

@@ -29,6 +29,10 @@ export class MenuService {
   }
  }
 
+ getMenuById(id: any) {
+  return this.httpClient.get(`${this.url}/${id}`, this.httpOptions);
+ }
+
  addMenu(data: any) {
   return this.httpClient.post(this.url, data, this.httpOptions);
  }

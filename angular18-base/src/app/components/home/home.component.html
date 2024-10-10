@@ -1,6 +1,6 @@
 <section>
- <form>
-  <input type="text" placeholder="Filter by city" #filter name="search" />
+ <form style="display: flex" autocomplete="off">
+  <input type="text" placeholder="Filter by city" #filter name="search" autocomplete="off" />
   <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
  </form>
 </section>

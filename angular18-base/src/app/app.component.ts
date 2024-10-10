@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { inject } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, switchMap } from 'rxjs/operators';
+import { CommonService } from './services/common.service';
 
 @Component({
  selector: 'app-root',
@@ -11,7 +11,10 @@ import { filter, map, switchMap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
  currentPath: string = '';
  pageTitle: string = '';
- constructor(private route: ActivatedRoute, private router: Router) {}
+ message: string | null = null;
+ constructor(private route: ActivatedRoute, private router: Router, private commonService: CommonService) {
+  this.commonService.message$.subscribe((data) => (this.message = data));
+ }
  ngOnInit() {
   this.router.events
    .pipe(

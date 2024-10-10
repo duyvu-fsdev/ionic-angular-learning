@@ -33,6 +33,11 @@ body {
  --accent-color: #e8e7fa;
  --shadow-color: #e8e8e8;
 }
+
+a {
+ cursor: pointer;
+}
+
 button {
  cursor: pointer;
  display: flex;

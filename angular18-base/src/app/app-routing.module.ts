@@ -9,19 +9,25 @@ import { CustompipesComponent } from './components/custompipes/custompipes.compo
 import { ServicesDiComponent } from './components/services-di/services-di.component';
 import { HttpClientComponent } from './components/http-client/http-client.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full' },
  { path: 'home', component: HomeComponent, title: 'Home' },
  { path: 'details/:id', component: DetailsComponent, title: 'Details' },
- { path: 'basic-knowledge', redirectTo: '/basic-knowledge/ng-model-binding', pathMatch: 'full' },
- { path: 'basic-knowledge/ng-model-binding', component: NgModelBindingComponent, title: 'Data Binding' },
- { path: 'basic-knowledge/directives', component: DirectivesComponent, title: 'Directives' },
- { path: 'basic-knowledge/pipes', component: PipesComponent, title: 'Pipes' },
- { path: 'basic-knowledge/custompipes', component: CustompipesComponent, title: 'Custom Pipes' },
- { path: 'basic-knowledge/services-di', component: ServicesDiComponent, title: 'Services and Dependency Injection' },
- { path: 'basic-knowledge/http-client', component: HttpClientComponent, title: 'Http Client' },
- { path: 'basic-knowledge/menu', component: MenuComponent, title: 'CURD Menu' },
+ { path: 'basic-knowledge', redirectTo: 'ng-model-binding', pathMatch: 'full' },
+ { path: 'ng-model-binding', component: NgModelBindingComponent, title: 'Data Binding' },
+ { path: 'directives', component: DirectivesComponent, title: 'Directives' },
+ { path: 'pipes', component: PipesComponent, title: 'Pipes' },
+ { path: 'custompipes', component: CustompipesComponent, title: 'Custom Pipes' },
+ { path: 'services-di', component: ServicesDiComponent, title: 'Services and Dependency Injection' },
+ { path: 'http-client', component: HttpClientComponent, title: 'Http Client' },
+ { path: 'menu', component: MenuComponent, title: 'CURD Menu', canActivate: [authGuard] },
+ {
+  path: 'lazy-loading',
+  loadChildren: () => import('./components/lazy-loading/lazy-loading.module').then((m) => m.LazyLoadingModule),
+  title: 'Lazy Loading',
+ },
 ];
 
 @NgModule({

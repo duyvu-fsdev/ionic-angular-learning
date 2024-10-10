@@ -106,3 +106,36 @@
   padding: 10px;
  }
 }
+
+.message {
+}
+
+.dialog-container {
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ display: flex;
+ justify-content: center;
+ align-items: flex-end;
+ z-index: 1000;
+ padding: 20px;
+}
+
+.dialog-box {
+ background-color: red;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 5px;
+ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+ animation: slideUp 0.2s ease-in-out;
+}
+
+@keyframes slideUp {
+ from {
+  transform: translateY(100%);
+ }
+ to {
+  transform: translateY(10px);
+ }
+}

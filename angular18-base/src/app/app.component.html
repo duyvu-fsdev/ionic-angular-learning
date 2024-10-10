@@ -1,6 +1,47 @@
 <div id="main">
  <div class="container">
-  @if (currentPath!= 'basic-knowledge') {
+  @if (currentPath !== 'home') {
+  <div class="left">
+   <div class="left-header">
+    <a [routerLink]="['/']">
+     <img class="home" src="/assets/images/home.png" alt="logo" aria-hidden="true" />
+    </a>
+    <h1 id="title">Angular 18 base</h1>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/ng-model-binding">1. ngModel - Data/Events/Two-way binding</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/directives">2. Directives</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/pipes">3. Pipes</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/custompipes">4. CustomPipes</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/services-di">5. Services and Dependency Injection</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/http-client">6. Http Client - Form (Reactive form)</a>
+   </div>
+   <div class="lesson-2">
+    <a routerLink="/lazy-loading">7. Lazy Loading</a>
+   </div>
+  </div>
+
+  <div class="right">
+   <div class="header">
+    <h1 style="color: #ffffff; padding: 20px 20px 20px 40px; text-shadow: 1px 1px 10px #ff0000; min-height: 77px">
+     {{ pageTitle }}
+    </h1>
+    <div class="hr"></div>
+   </div>
+   <div class="main-content"><router-outlet></router-outlet></div>
+  </div>
+  } @else {
+
   <div class="left">
    <div class="left-header">
     <a [routerLink]="['/']">
@@ -142,53 +183,22 @@
     </ul>
    </div>
    <div class="lesson highlight">
-    <a [routerLink]="['/basic-knowledge']"> >>> Review basic knowledge Angular 18</a>
+    <a routerLink="/basic-knowledge"> >>> Review basic knowledge Angular 18</a>
    </div>
   </div>
   <div class="right">
-   <header class="brand-name">
-    <a [routerLink]="['/']">
-     <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
-    </a>
-   </header>
+   <div class="header" style="background-color: #ffffff; padding: 10px">
+    <img style="cursor: pointer" routerLink="/" class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+   </div>
    <router-outlet></router-outlet>
-  </div>
-  }@else {
-  <div class="left">
-   <div class="left-header">
-    <a [routerLink]="['/']">
-     <img class="home" src="/assets/images/home.png" alt="logo" aria-hidden="true" />
-    </a>
-    <h1 id="title">Angular 18 base</h1>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/ng-model-binding">1. ngModel - Data/Events/Two-way binding</a>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/directives">2. Directives</a>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/pipes">3. Pipes</a>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/custompipes">4. CustomPipes</a>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/services-di">5. Services and Dependency Injection</a>
-   </div>
-   <div class="lesson-2">
-    <a routerLink="/basic-knowledge/http-client">6. Http Client</a>
-   </div>
-  </div>
-  <div class="right">
-   <div class="header">
-    <h1 style="color: #ffffff; padding: 20px 20px 20px 40px; text-shadow: 1px 1px 10px #ff0000; min-height: 77px">
-     {{ pageTitle }}
-    </h1>
-    <div class="hr"></div>
-   </div>
-   <div class="main-content"><router-outlet></router-outlet></div>
   </div>
   }
  </div>
 </div>
+@if (message ) {
+<div class="dialog-container">
+ <div class="dialog-box">
+  {{ message }}
+ </div>
+</div>
+}

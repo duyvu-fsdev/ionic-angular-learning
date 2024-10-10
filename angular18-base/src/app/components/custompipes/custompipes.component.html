@@ -50,5 +50,33 @@
     <img src="/assets/images/customAsyncPipe.png" alt="customAsyncPipe" aria-hidden="true" />
    </div>
   </div>
+
+  <div class="block">
+   <div class="inner-block">
+    <li class="title">CustomCurrencyPipe</li>
+    <p class="hl-da" ngNonBindable>Syntax :&lt;el> ... {{ value | customCurrency : 'currencyCode' }}...&lt;/el> ...&lt;/el></p>
+    <ul>
+     <li class="from">
+      <input placeholder="currency value" [(ngModel)]="currencyValue" type="number" />
+      <input placeholder="currency code" [(ngModel)]="currencyCode" type="text" />
+     </li>
+    </ul>
+    <ul>
+     <li class="to">
+      <p class="hl-ss">{{ currencyValue | customCurrency }}</p>
+      default VND
+     </li>
+     <li class="to">
+      <p class="hl-ss">{{ currencyValue | customCurrency : 'EUR' }}</p>
+      currencyCode : EUR
+     </li>
+     <li class="to">
+      <p class="hl-ss">{{ currencyValue | customCurrency : currencyCode || 'VND' }}</p>
+      currencyCode :
+      {{ currencyCode || 'VND' }}
+     </li>
+    </ul>
+   </div>
+  </div>
  </ul>
 </div>

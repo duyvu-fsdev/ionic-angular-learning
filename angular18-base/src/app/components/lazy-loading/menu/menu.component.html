@@ -1,0 +1,29 @@
+<div style="position: relative">
+ <button class="da" routerLink="/lazy-loading">Back to Lazy Loading</button>
+ <ul>
+  @if (hasUser) {
+  <li class="n">
+   <p class="hl-ss">You are logged in</p>
+   <button class="primary" (click)="logout()">Logout</button>
+  </li>
+  }@else {
+  <li class="n">
+   <p class="hl-ss">You are not logged in</p>
+   <button class="primary" (click)="login()">Login</button>
+  </li>
+  }
+ </ul>
+
+ <div class="table" style="margin-top: 10px; border-radius: 6px; width: 400px">
+  @for (item of menus; track $index) {
+  <div class="table-row">
+   <div class="table-cell">{{ item.name | titlecase }}</div>
+   <div class="table-cell" style="max-width: fit-content">
+    <div style="display: flex; gap: 5px; justify-content: center; width: fit-content">
+     <button class="wn" (click)="gotoDetail(item.id)">Go To Detail</button>
+    </div>
+   </div>
+  </div>
+  }
+ </div>
+</div>

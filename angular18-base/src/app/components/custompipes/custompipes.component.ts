@@ -14,4 +14,7 @@ export class CustompipesComponent {
  constructor() {
   this.timeObservable = interval(1000).pipe(map(() => new Date().toLocaleTimeString()));
  }
+ //CurrencyPipe
+ currencyValue!: number;
+ currencyCode!: string;
 }

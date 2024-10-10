@@ -1,0 +1,12 @@
+<div style="position: relative">
+ <button class="da" routerLink="/lazy-loading/menu">Back to Menu</button>
+ <div class="block" style="margin-top: 10px">
+  <ul style="font-weight: bold">
+   <li class="df">Name : {{ menu?.name | titlecase }}</li>
+   <li class="df">Price : {{ menu?.price | customCurrency : 'VND' }}</li>
+   <li class="df">Category : {{ menu?.category | titlecase }}</li>
+   <li class="df">Created At : {{ menu?.createdAt | customDate }}</li>
+   <li class="df">Updated At : {{ menu?.updatedAt | customDate }}</li>
+  </ul>
+ </div>
+</div>
