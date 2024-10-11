@@ -1,0 +1,94 @@
+<ul>
+ <div class="block">
+  <div class="inner-block">
+   <li class="title">Writable signals</li>
+   <div class="sub-block">
+    <div class="inner-block">
+     <p class="title">Simple example</p>
+     <div style="display: flex; gap: 5px; margin-bottom: 10px">
+      <button class="primary" (click)="decrement()">Decrement</button>
+      <p class="hl-ss">{{ counter() }}</p>
+      <button class="primary" (click)="increment()">Increment</button>
+     </div>
+    </div>
+   </div>
+   <div class="sub-block">
+    <div class="inner-block">
+     <p class="title">{{ 'Use Signal in service' | titlecase }}</p>
+     <div class="table">
+      <div class="table-row header-row">
+       <div class="table-cell" style="max-width: 50px">STT</div>
+       <div class="table-cell">Name</div>
+       <div class="table-cell">Price</div>
+       <div class="table-cell">Category</div>
+       <div class="table-cell">Created At</div>
+       <div class="table-cell">Updated Atád</div>
+      </div>
+      @for (menu of menuService.menus(); track $index) {
+      <div class="table-row">
+       <div class="table-cell" style="max-width: 50px">{{ $index + 1 }}</div>
+       <div class="table-cell">{{ menu.name | titlecase }}</div>
+       <div class="table-cell">{{ menu.price | customCurrency : 'VND' }}</div>
+       <div class="table-cell">{{ menu.category | titlecase }}</div>
+       <div class="table-cell">{{ menu.createdAt | customDate }}</div>
+       <div class="table-cell">{{ menu.updatedAt | customDate }}</div>
+      </div>
+      }
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="block">
+  <div class="inner-block">
+   <li class="title">Computed signals</li>
+   <div class="sub-block computed" style="display: flex; gap: 5px; flex-direction: column">
+    <p class="hl-da">Value 1: {{ value1() }}</p>
+    <p class="hl-da">Value 2: {{ value2() }}</p>
+    <button class="primary" (click)="incrementValues()">Increment Values</button>
+    <p class="hl-ss">Sum: {{ sum() }}</p>
+   </div>
+   <div class="hr" style="margin: 10px 0"></div>
+   <div class="sub-block computed" style="display: flex; gap: 5px; flex-direction: column">
+    <p class="hl-da">Show: {{ showResult() }}</p>
+    <button class="primary" (click)="toggleShow()">Toggle Show</button>
+    <p class="hl-da">Value: {{ value() }}</p>
+    <button class="primary" (click)="incrementValue()">Increment Values</button>
+    <p class="hl-ss">{{ square() }}</p>
+   </div>
+  </div>
+ </div>
+ <div class="block">
+  <div class="inner-block">
+   <li class="title">Effects</li>
+   <div class="sub-block effects" style="display: flex; gap: 5px; flex-direction: column">
+    <p class="title">Simple example</p>
+    <button class="primary" (click)="toggleBoolean()">Toggle</button>
+    <p class="hl-ss">{{ mess1 }}</p>
+    <p class="hl-da">Check the change in console.log</p>
+   </div>
+   <div class="sub-block effects" style="display: flex; gap: 5px; flex-direction: column">
+    <p class="title">Effects in Injection context</p>
+    <div style="display: flex; gap: 5px; align-items: center">
+     <button class="wn" (click)="load()">Start Loading</button>
+     @if (loadingService.isLoading()) {
+     <div style="display: flex; gap: 5px; align-items: center; width: 100px; justify-content: center"><div class="loader"></div></div>
+     } @else {
+     <p class="hl-ss" style="width: 100px">Stopped</p>
+     }
+     <button class="da" (click)="stop()">Stop Loading</button>
+    </div>
+    <p class="hl-da">Check the change in console.log</p>
+   </div>
+   <div class="sub-block effects" style="display: flex; gap: 5px; flex-direction: column">
+    <p class="title">untracked</p>
+    <p class="hl-da">Value 1: {{ val1() }}</p>
+    <button class="primary" (click)="incrementVal1()">Increment Values</button>
+    <p class="hl-da">Value 2: {{ val2() }}</p>
+    <button class="primary" (click)="incrementVal2()">Increment Values</button>
+    <p class="hl-ss">Sum: {{ sum2() }}</p>
+    <p class="hl-ss">{{ mess2 }}</p>
+   </div>
+  </div>
+ </div>
+</ul>

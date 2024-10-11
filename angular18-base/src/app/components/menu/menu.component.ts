@@ -18,7 +18,7 @@ export class MenuComponent {
 
  formData = this.fb.group({
   name: ['', Validators.required],
-  price: [0, Validators.required],
+  price: [, Validators.required],
   category: ['', Validators.required],
  });
 
@@ -88,7 +88,7 @@ export class MenuComponent {
  resetForm() {
   this.formData = this.fb.group({
    name: ['', Validators.required],
-   price: [0, Validators.required],
+   price: [, Validators.required],
    category: ['', Validators.required],
   });
  }
