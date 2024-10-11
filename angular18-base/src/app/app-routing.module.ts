@@ -29,6 +29,11 @@ const routes: Routes = [
   title: 'Lazy Loading',
  },
  { path: 'signals', loadChildren: () => import('./components/signals/signals.module').then((m) => m.SignalsModule), title: 'Signals' },
+ {
+  path: 'performance',
+  loadChildren: () => import('./components/performance/performance.module').then((m) => m.PerformanceModule),
+  title: 'Performance',
+ },
 ];
 
 @NgModule({

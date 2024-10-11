@@ -11,7 +11,6 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { HomeComponent } from './components/home/home.component';
 import { HousingLocationComponent } from './components/housing-location/housing-location.component';
 import { HttpClientComponent } from './components/http-client/http-client.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { NgModelBindingComponent } from './components/ng-model-binding/ng-model-binding.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { ServicesDiComponent } from './components/services-di/services-di.component';
@@ -31,7 +30,6 @@ import { CustomPipesModule } from './Pipes/custompipes.module';
   CustompipesComponent,
   ServicesDiComponent,
   HttpClientComponent,
-  MenuComponent,
  ],
  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule, FormsModule, CustomPipesModule],
  providers: [],

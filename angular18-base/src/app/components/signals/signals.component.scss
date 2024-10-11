@@ -1,34 +1,3 @@
-.table {
- border-radius: 6px;
- margin-bottom: 10px;
- display: flex;
- flex-direction: column;
- border: 1px solid #ccc;
- overflow-x: auto;
- width: 100%;
- .table-row {
-  display: flex;
-  table-layout: fixed;
-  width: 100%;
-  .table-cell {
-   flex: 1;
-   padding: 8px;
-   border-bottom: 1px solid #ccc;
-   text-align: center;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   & + .table-cell {
-    border-left: 1px solid #ccc;
-   }
-  }
- }
- .table-row.header-row {
-  .table-cell {
-   font-weight: bold;
-  }
- }
-}
 .effects,
 .computed {
  button,
@@ -40,31 +9,5 @@
   align-items: center;
   justify-content: center;
   min-height: 30px;
- }
-}
-
-.loader {
- width: 15px;
- height: 15px;
- aspect-ratio: 1;
- border-radius: 50%;
- animation: l5 1s infinite linear alternate;
-}
-@keyframes l5 {
- 0% {
-  box-shadow: 20px 0 #000, -20px 0 #0002;
-  background: #000;
- }
- 33% {
-  box-shadow: 20px 0 #000, -20px 0 #0002;
-  background: #0002;
- }
- 66% {
-  box-shadow: 20px 0 #0002, -20px 0 #000;
-  background: #0002;
- }
- 100% {
-  box-shadow: 20px 0 #0002, -20px 0 #000;
-  background: #000;
  }
 }
