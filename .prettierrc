@@ -3,10 +3,10 @@
  "bracketSameLine": false,
  "bracketSpacing": true,
  "embeddedLanguageFormatting": "auto",
- "htmlWhitespaceSensitivity": "css",
+ "htmlWhitespaceSensitivity": "strict",
  "insertPragma": false,
  "jsxSingleQuote": false,
- "printWidth": 140,
+ "printWidth": 80,
  "proseWrap": "preserve",
  "quoteProps": "as-needed",
  "requirePragma": false,
@@ -15,5 +15,8 @@
  "tabWidth": 1,
  "trailingComma": "all",
  "useTabs": false,
- "vueIndentScriptAndStyle": false
+ "vueIndentScriptAndStyle": false,
+ "jsxBracketSameLine": false,
+ "experimentalTernaries": true,
+ "endOfLine": "auto"
 }

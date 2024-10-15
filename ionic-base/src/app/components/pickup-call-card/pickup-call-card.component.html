@@ -1,0 +1,33 @@
+<ion-card>
+ <ng-content select="[header]"></ng-content>
+ <ion-card-content>
+  <ion-item lines="none">
+   @if (status=='hold') {
+   <ion-icon slot="start" name="hourglass-outline" color="warning"> </ion-icon>
+   } @if (status=='processing') {
+   <ion-icon slot="start" name="archive-outline" color="secondary"> </ion-icon>
+   } @if (status=='finished') {
+   <ion-icon slot="start" name="checkmark-circle-outline" color="primary">
+   </ion-icon>
+   }
+   <ion-label>
+    @if (status=='hold') { <span>On hold</span> } @if (status=='processing') {
+    <span>Processing</span> } @if (status=='finished') { <span>Finished</span> }
+    <p>{{ updatedAt }}</p>
+   </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+   <ion-label>
+    @if (createdAt) { <p>Created at : {{ createdAt }}</p> } @if (notes) {
+    <p>Notes : {{ notes }}</p> }
+   </ion-label>
+  </ion-item>
+  @if (vallue) {
+  <ion-item lines="none">
+   <ion-icon slot="start" name="trophy" color="success"> </ion-icon>
+   <ion-label color="success"> {{ vallue | currency }} </ion-label>
+  </ion-item>
+  }
+ </ion-card-content>
+ <ng-content select="[footer]"> </ng-content>
+</ion-card>

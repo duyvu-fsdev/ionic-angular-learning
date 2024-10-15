@@ -7,58 +7,22 @@
  </ion-toolbar>
 </ion-header>
 <ion-content>
- <ion-card>
-  <ion-card-content>
-   <ion-item lines="none">
-    <ion-icon slot="start" name="hourglass-outline" color="warning"> </ion-icon>
-    <ion-label
-     >On hold
-     <p>13/10/2024 17:03:00</p>
-    </ion-label>
-   </ion-item>
-   <ion-item lines="none">
-    <ion-label>
-     <p>Created at : 13/10/2024 10:03:00</p>
-     <p>Notes : we have two bags that are full. One with plastic and the other with glases</p>
-    </ion-label>
-   </ion-item>
-  </ion-card-content>
- </ion-card>
- <ion-card>
-  <ion-card-content>
-   <ion-item lines="none">
-    <ion-icon slot="start" name="archive-outline" color="secondary"> </ion-icon>
-    <ion-label
-     >Processing
-     <p>14/10/2024 18:03:00</p>
-    </ion-label>
-   </ion-item>
-   <ion-item lines="none">
-    <ion-label>
-     <p>Created at : 13/10/2024 10:03:00</p>
-     <p>Notes : we have two bags that are full. One with plastic and the other with glases</p>
-    </ion-label>
-   </ion-item>
-  </ion-card-content>
- </ion-card>
- <ion-card>
-  <ion-card-content>
-   <ion-item lines="none">
-    <ion-icon slot="start" name="checkmark-circle-outline" color="primary"> </ion-icon>
-    <ion-label
-     >Finished
-     <p>14/10/2024 20:03:00</p>
-    </ion-label>
-   </ion-item>
-   <ion-item lines="none">
-    <ion-label>
-     <p>Created at : 13/10/2024 10:03:00</p>
-    </ion-label>
-   </ion-item>
-   <ion-item lines="none">
-    <ion-icon slot="start" name="trophy" color="success"> </ion-icon>
-    <ion-label color="success"> {{35.0 | currency }} </ion-label>
-   </ion-item>
-  </ion-card-content>
- </ion-card>
+ <app-pickup-call-card
+  status="hold"
+  updatedAt="13/10/2024 17:03:00"
+  createdAt="13/10/2024 10:03:00"
+  notes="We have two bags that are full. One with plastic and the other with glases"
+ />
+ <app-pickup-call-card
+  status="processing"
+  updatedAt="14/10/2024 18:03:00"
+  createdAt="13/10/2024 10:03:00"
+  notes="we have two bags that are full."
+ />
+ <app-pickup-call-card
+  status="finished"
+  updatedAt="14/10/2024 20:03:00"
+  createdAt="13/10/2024 10:03:00"
+  vallue="35"
+ />
 </ion-content>
