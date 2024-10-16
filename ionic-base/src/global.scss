@@ -39,25 +39,17 @@
 ion-button {
  font-weight: 600;
 }
+
 ion-item {
- --padding-end: 16px;
- --min-height: 32px;
- ion-input {
-  min-height: 32px !important;
- }
+ --inner-padding-end: 8px;
+ --inner-padding-start: 8px;
+ --padding-end: 4px;
+ --padding-start: 4px;
 }
+
 .flex-center {
  display: flex;
  justify-content: center;
  align-items: center;
  height: 100%;
-}
-p.error-line {
- color: red;
- padding-left: 16px;
- margin-top: 5px;
- margin-bottom: 5px;
- font-size: 12px;
- display: block;
- height: 12px;
 }

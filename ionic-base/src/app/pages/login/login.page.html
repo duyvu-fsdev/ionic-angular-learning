@@ -1,6 +1,6 @@
 <ion-content>
  <div class="flex-center">
-  <form [formGroup]="loginForm" (submit)="login()">
+  <form style="min-width: 360px" [formGroup]="loginForm" (submit)="login()">
    <ion-card>
     <ion-card-header>
      <ion-card-title color="success"> Login </ion-card-title>
@@ -9,29 +9,36 @@
      <ion-list>
       <ion-item>
        <ion-input
+        labelPlacement="floating"
         formControlName="email"
-        label="Email :"
         type="email"
         placeholder="youremail@domain.com"
-       ></ion-input>
+       >
+        <div slot="label">
+         Email @if (e?.invalid && e?.touched) { @if (e?.errors?.['required']) {
+         <ion-text color="danger"> is required </ion-text> } @else if
+         (e?.errors?.['email']) {
+         <ion-text color="danger"> is invalid </ion-text> } }
+        </div>
+       </ion-input>
       </ion-item>
-      <p class="error-line">
-       @if (e?.invalid && e?.touched) { @if (e?.errors?.['required']) { Email is
-       required } @else if (e?.errors?.['email']) { Email is invalid } }
-      </p>
+
       <ion-item>
        <ion-input
-        label="Password :"
+        labelPlacement="floating"
         formControlName="password"
         type="password"
-        placeholder="••••••••"
-       ></ion-input>
+        placeholder="••••••"
+       >
+        <div slot="label">
+         Password @if (p?.invalid && p?.touched) { @if(p?.errors?.['required'])
+         {
+         <ion-text color="danger"> is required </ion-text> } @else if
+         (p?.errors?.['minlength']) {
+         <ion-text color="danger"> must be at least 6 characters </ion-text> } }
+        </div>
+       </ion-input>
       </ion-item>
-      <p class="error-line">
-       @if (p?.invalid && p?.touched) { @if(p?.errors?.['required']) { Password
-       is required} @else if (p?.errors?.['minlength']) { Password must be at
-       least 6 characters } }
-      </p>
      </ion-list>
 
      <ion-button
@@ -51,5 +58,5 @@
     </ion-card-content>
    </ion-card>
   </form>
- </div></ion-content
->
+ </div>
+</ion-content>
