@@ -1,18 +1,36 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Store } from '@ngrx/store';
+import { map, tap } from 'rxjs';
+import { AuthState, logout } from './NgRx/store/auth/auth.slice';
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+ selector: 'app-root',
+ templateUrl: 'app.component.html',
+ styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+ public appPages = [
+  { title: 'Pickup Calls', url: '/pickup-calls', icon: 'call' },
+
+  { title: 'Pickup Call', url: '/pickup-call', icon: 'paper-plane' },
+ ];
+ constructor(private store: Store<{ auth: AuthState }>, private navCtrl: NavController) {}
+
+ ngOnInit() {
+  this.store
+   .select('auth')
+   .pipe(
+    map((state) => state.isLoggedIn),
+    tap((isLoggedIn) => {
+     if (!isLoggedIn) {
+      this.navCtrl.navigateRoot('/login');
+     }
+    }),
+   )
+   .subscribe();
+ }
+
+ handleLogout() {
+  this.store.dispatch(logout());
+ }
 }

@@ -1,28 +1,18 @@
-const responseData = (
- status: number,
- message: string | null,
- error: any | null,
- data: any | null,
-) => {
- if (error != null && error instanceof Error) {
-  const response = {
-   status: status,
-   message: error.message,
-   errors: error,
-   data: null,
-  };
-
-  return response;
- }
-
- const res = {
-  status,
-  message,
-  errors: error,
-  data: data,
- };
-
- return res;
+export const errorGenerate = (code?: number, errorMessages?: string | string[]) => {
+ return { code: code || 500, errorMessages: errorMessages || 'An unexpected error occurred' };
 };
 
-export default responseData;
+export const errorCatchGenerate = (code: number, errorMessages: string | string[]) => {
+ return { code, errorMessages };
+};
+
+export const responseData = (
+ status: 'success' | 'error',
+ message: string,
+ data: any | null,
+ errors: { code: number; errorMessages: string | string[] } | null,
+) => {
+ return errors != null
+  ? { status: status, message, data: null, errors }
+  : { status, message, data: data, errors: null };
+};

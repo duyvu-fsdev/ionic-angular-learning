@@ -6,25 +6,14 @@
      <ion-list-header>Inbox</ion-list-header>
      <ion-note>hi&#64;ionicframework.com</ion-note>
 
-     <ion-menu-toggle
-      auto-hide="false"
-      *ngFor="let p of appPages; let i = index"
-     >
-      <ion-item
-       routerDirection="root"
-       [routerLink]="[p.url]"
-       lines="none"
-       detail="false"
-       routerLinkActive="selected"
-      >
-       <ion-icon
-        aria-hidden="true"
-        slot="start"
-        [ios]="p.icon + '-outline'"
-        [md]="p.icon + '-sharp'"
-       ></ion-icon>
+     <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+      <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+       <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
        <ion-label>{{ p.title }}</ion-label>
       </ion-item>
+     </ion-menu-toggle>
+     <ion-menu-toggle>
+      <ion-button (click)="handleLogout()" expand="block" fill="clear" shape="round"> Logout </ion-button>
      </ion-menu-toggle>
     </ion-list>
    </ion-content>

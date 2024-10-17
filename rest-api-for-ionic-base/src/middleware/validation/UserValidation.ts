@@ -1,7 +1,7 @@
+import { NextFunction, Request, Response } from 'express';
 import Validator from 'validatorjs';
-import { Request, Response, NextFunction } from 'express';
 import User from '../../db/models/user';
-import responseData from '../../utils/responseData';
+import { errorGenerate, responseData } from '../../utils/responseData';
 
 const registerValidation = async (req: Request, res: Response, next: NextFunction) => {
  try {
@@ -16,16 +16,22 @@ const registerValidation = async (req: Request, res: Response, next: NextFunctio
   const validate = new Validator(data, rules);
 
   if (validate.fails()) {
-   return res.status(400).send(responseData(400, 'Bad Request', validate.errors, null));
+   const errors = Object.entries(validate.errors.errors)
+    .map(([field, messages]) => {
+     return messages.map((message) => message);
+    })
+    .flat();
+
+   return res.status(400).send(responseData('error', 'Bad Request', null, errorGenerate(400, errors)));
   }
   const user = await User.findOne({ where: { email: data.email } });
   if (user) {
-   const errorData = { errors: { email: ['Email already used'] } };
-   return res.status(400).send(responseData(400, 'BadRequest', errorData, null));
+   const errors = errorGenerate(409, 'Email already used');
+   return res.status(409).send(responseData('error', 'Conflict', null, errors));
   }
   next();
- } catch (error: any) {
-  return res.status(500).send(responseData(500, '', error, null));
+ } catch (error) {
+  return res.status(500).send(responseData('error', '', null, errorGenerate()));
  }
 };
 

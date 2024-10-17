@@ -1,49 +1,75 @@
 <ion-content>
  <div class="flex-center">
-  <ion-card>
-   <ion-card-header>
-    <ion-card-title color="success">Register</ion-card-title>
-   </ion-card-header>
-   <ion-card-content>
-    <ion-list>
+  <form [formGroup]="registerForm" style="width: 350px">
+   <ion-card>
+    <ion-card-header>
+     <ion-card-title color="success">Register</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
      <ion-list>
-      <ion-item>
-       <ion-input label="Name :" placeholder=" John Smith St"></ion-input>
-      </ion-item>
-      <ion-item>
-       <ion-input
-        label="Tel. :"
-        type="tel"
-        placeholder="(+84)900 123 456"
-       ></ion-input>
-      </ion-item>
-      <ion-item>
-       <ion-input
-        label="Email : "
-        type="email"
-        placeholder="youremail@domain.com"
-       ></ion-input>
-      </ion-item>
-      <ion-item>
-       <ion-input
-        label="Password : "
-        type="password"
-        value="password"
-        placeholder="youremail@domain.com"
-       ></ion-input>
-      </ion-item>
-      <ion-item>
-       <ion-input
-        label="Confirm Password : "
-        type="password"
-        value="password"
-       ></ion-input>
-      </ion-item>
+      <ion-list>
+       <ion-item>
+        <ion-input labelPlacement="floating" formControlName="name" type="text" placeholder=" John Smith St">
+         <div slot="label">
+          Name @if (f.get('name')?.invalid && f.get('name')?.touched) { @if (f.get('name')?.errors?.['required']) {
+          <ion-text color="danger"> is required </ion-text> } @else if (f.get('name')?.errors?.['maxlength']) {
+          <ion-text color="danger"> too long </ion-text> } }
+         </div>
+        </ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-input labelPlacement="floating" formControlName="phoneNumber" type="text" placeholder="0900 123 456">
+         <div slot="label">
+          Tel. @if (f.get('phoneNumber')?.invalid && f.get('phoneNumber')?.touched) { @if
+          (f.get('phoneNumber')?.errors?.['required']) {
+          <ion-text color="danger"> is required </ion-text> } @else if (f.get('phoneNumber')?.errors?.['NaN']) {
+          <ion-text color="danger"> is invalid </ion-text> } }
+         </div>
+        </ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-input labelPlacement="floating" formControlName="email" type="email" placeholder="youremail@domain.com">
+         <div slot="label">
+          Email @if (f.get('email')?.invalid && f.get('email')?.touched) { @if (f.get('email')?.errors?.['required']) {
+          <ion-text color="danger"> is required </ion-text> } @else if (f.get('email')?.errors?.['email']) {
+          <ion-text color="danger"> is invalid </ion-text> } }
+         </div>
+        </ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-input labelPlacement="floating" formControlName="password" type="password" placeholder="••••••">
+         <div slot="label">
+          Password @if (f.get('password')?.invalid && f.get('password')?.touched) {
+          @if(f.get('password')?.errors?.['required']) {
+          <ion-text color="danger"> is required </ion-text> } @else if (f.get('password')?.errors?.['minlength']) {
+          <ion-text color="danger"> must be at least 6 characters </ion-text> } }
+         </div>
+        </ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-input labelPlacement="floating" formControlName="confirmPassword" type="password" placeholder="••••••">
+         @if (registerForm.errors?.['passwordMismatch']) {
+         <div slot="label">
+          <ion-text color="danger"> Confirm Password does not match </ion-text>
+         </div>
+         }@else {
+         <div slot="label">
+          Confirm Password @if (f.get('confirmPassword')?.invalid && f.get('confirmPassword')?.touched) {
+          @if(f.get('confirmPassword')?.errors?.['required']) { <ion-text color="danger"> is required </ion-text> }
+          @else if (f.get('confirmPassword')?.errors?.['minlength']) {
+          <ion-text color="danger"> must be at least 6 characters </ion-text> } }
+         </div>
+         }
+        </ion-input>
+       </ion-item>
+      </ion-list>
      </ion-list>
-    </ion-list>
-    <ion-button color="success" size="full">Register</ion-button>
-    <ion-button (click)="goToLogin()" size="full">Login</ion-button>
-   </ion-card-content>
-  </ion-card>
+     <ion-button (click)="handleRegister()" [disabled]="registerForm.invalid" color="success" size="full">
+      Register
+     </ion-button>
+     <ion-button (click)="goToLogin()" size="full">Login</ion-button>
+    </ion-card-content>
+   </ion-card>
+  </form>
  </div>
 </ion-content>
