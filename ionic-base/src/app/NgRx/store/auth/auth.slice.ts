@@ -8,35 +8,28 @@ export interface AuthState {
  isLoggedIn: boolean;
  isLoggingIn: boolean;
  currentUser: User | null;
- error: any;
+ errorRegister: any;
+ errorLogin: any;
 }
 
 export const register = createAction('[auth] register');
 export const registerSuccess = createAction('[auth] register success', props<{ loginInfor: LoginInfor }>());
-export const registerFail = createAction('[auth] register fail', props<{ error: any }>());
+export const registerFail = createAction('[auth] register fail', props<{ errorRegister: any }>());
 export const login = createAction('[auth] login');
 export const loginSuccess = createAction('[auth] login success', props<{ currentUser: User }>());
-export const loginFail = createAction('[auth] login fail', props<{ error: any }>());
+export const loginFail = createAction('[auth] login fail', props<{ errorLogin: any }>());
 export const logout = createAction('[auth] logout');
 
-const initialState: AuthState = {
- isRegistering: false,
- isregistered: false,
- loginInfor: null,
- isLoggingIn: false,
- isLoggedIn: false,
- currentUser: null,
- error: null,
-};
+const initialState: AuthState = { isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, errorRegister: null, errorLogin: null };
 
 const reducer = createReducer(
  initialState,
- on(register, (state) => ({ ...state, isRegistering: true, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, error: null })),
- on(registerSuccess, (state, { loginInfor }) => ({ ...state, isRegistering: false, isregistered: true, loginInfor, isLoggingIn: false, isLoggedIn: false, currentUser: null, error: null })),
- on(login, (state) => ({ ...state, isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: true, isLoggedIn: false, currentUser: null, error: null })),
- on(loginSuccess, (state, { currentUser }) => ({ ...state, isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: true, currentUser, error: null })),
- on(loginFail, registerFail, (state, { error }) => ({ ...state, isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, error })),
- on(loginFail, registerFail, (state, { error }) => ({ ...state, isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, error })),
+ on(register, () => ({ isRegistering: true, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, errorRegister: null, errorLogin: null })),
+ on(registerSuccess, ({ loginInfor }) => ({ isRegistering: false, isregistered: true, loginInfor, isLoggingIn: false, isLoggedIn: false, currentUser: null, errorRegister: null, errorLogin: null })),
+ on(login, () => ({ isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: true, isLoggedIn: false, currentUser: null, errorRegister: null, errorLogin: null })),
+ on(loginSuccess, ({ currentUser }) => ({ isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: true, currentUser, errorRegister: null, errorLogin: null })),
+ on(registerFail, ({ errorRegister }) => ({ isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, errorRegister, errorLogin: null })),
+ on(loginFail, ({ errorLogin }) => ({ isRegistering: false, isregistered: false, loginInfor: null, isLoggingIn: false, isLoggedIn: false, currentUser: null, errorRegister: null, errorLogin })),
  on(logout, () => initialState),
 );
 

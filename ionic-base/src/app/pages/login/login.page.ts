@@ -50,38 +50,36 @@ export class LoginPage implements OnInit {
   if (authState.isRegistering || authState.isLoggingIn) this.store.dispatch(show());
   else this.store.dispatch(hide());
   if (authState.isLoggingIn) this.onIsLoggingIn();
-  if (authState.isLoggedIn) this.onIsLoggedIn(authState);
+  if (authState.isLoggedIn) this.onIsLoggedIn();
+  if (authState.errorLogin) this.onIsLoginFail(authState);
  }
 
  onIsLoggingIn() {
   this.authService.login(this.loginForm.value).subscribe(
-   (d) => {
-    this.currentUser = d.data.currentUser;
-    this.store.dispatch(loginSuccess({ currentUser: this.currentUser }));
-   },
-   (e) => this.store.dispatch(loginFail(e)),
+   (res) => this.store.dispatch(loginSuccess({ currentUser: res.data.currentUser })),
+   (e) => this.store.dispatch(loginFail({ errorLogin: e.error.errors })),
   );
  }
 
- onIsLoggedIn(authState: AuthState) {}
-
- onIsLoginFail(authState: AuthState) {
-  if (authState.error) {
-   console.log(authState.error);
-   this.callToaster('onIsLoginFail', 'danger');
-  }
+ onIsLoggedIn() {
+  this.presentToast('onIsLoggedIn', 'success');
  }
 
- async callToaster(
+ onIsLoginFail(authState: AuthState) {
+  this.presentToast(authState.errorLogin.errorMessages, 'danger');
+ }
+
+ async presentToast(
   message: string,
   color: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark',
  ) {
-  const toaster = await this.toastController.create({
-   position: 'bottom',
+  const toast = await this.toastController.create({
    message,
+   duration: 1500,
+   position: 'bottom',
    color,
   });
-  toaster.prepend();
+  await toast.present();
  }
 
  handleLogin() {
@@ -97,5 +95,9 @@ export class LoginPage implements OnInit {
  }
  get p() {
   return this.loginForm.get('password');
+ }
+
+ ngOnDestroy(): void {
+  this.authStateSubscription.unsubscribe();
  }
 }

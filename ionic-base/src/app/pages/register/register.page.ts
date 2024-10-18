@@ -89,11 +89,12 @@ export class RegisterPage implements OnInit {
  authStateTracking(authState: AuthState) {
   if (authState.isRegistering || authState.isLoggingIn) this.store.dispatch(show());
   else this.store.dispatch(hide());
-  if (authState.error) this.onFails(authState);
   if (authState.isRegistering) this.onIsRegisering();
   if (authState.isregistered) this.onIsRegisered();
+  if (authState.errorRegister) this.onRegisterFails(authState);
   if (authState.isLoggingIn) this.onIsLoggingIn();
   if (authState.isLoggedIn) this.onIsLoggedIn(authState);
+  if (authState.errorLogin) this.onLoginFails(authState);
  }
 
  onIsRegisering() {
@@ -101,10 +102,13 @@ export class RegisterPage implements OnInit {
   const formValue = { name: capitalize(name as string), ...data };
   this.authService.register(formValue).subscribe(
    () => {
-    this.loginInfor = { email: this.registerForm.value.email, password: this.registerForm.value.password };
+    this.loginInfor = {
+     email: this.registerForm.value.email,
+     password: this.registerForm.value.password,
+    };
     this.store.dispatch(registerSuccess({ loginInfor: this.loginInfor }));
    },
-   (e) => this.store.dispatch(registerFail(e)),
+   (e) => this.store.dispatch(registerFail({ errorRegister: e.error.errors })),
   );
  }
 
@@ -113,10 +117,7 @@ export class RegisterPage implements OnInit {
  }
 
  onIsRegiserFail(authState: AuthState) {
-  if (authState.error) {
-   console.log(authState.error);
-   this.callToaster('onIsRegiserFail', 'danger');
-  }
+  this.presentToast('onIsRegiserFail', 'danger');
  }
 
  onIsLoggingIn() {
@@ -125,7 +126,7 @@ export class RegisterPage implements OnInit {
     this.currentUser = d.data.currentUser;
     this.store.dispatch(loginSuccess({ currentUser: this.currentUser }));
    },
-   (e) => this.store.dispatch(loginFail(e)),
+   (e) => this.store.dispatch(loginFail({ errorLogin: e.error.errors })),
   );
  }
 
@@ -133,23 +134,24 @@ export class RegisterPage implements OnInit {
   console.log(authState.currentUser);
  }
 
- onFails(authState: AuthState) {
-  if (authState.error) {
-   console.log(authState.error);
-   this.callToaster('onFails', 'danger');
-  }
+ onRegisterFails(authState: AuthState) {
+  this.presentToast(authState.errorRegister.errorMessages, 'danger');
+ }
+ onLoginFails(authState: AuthState) {
+  this.presentToast(authState.errorLogin.errorMessages, 'danger');
  }
 
- async callToaster(
+ async presentToast(
   message: string,
   color: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark',
  ) {
-  const toaster = await this.toastController.create({
-   position: 'bottom',
+  const toast = await this.toastController.create({
    message,
+   duration: 1500,
+   position: 'bottom',
    color,
   });
-  toaster.prepend();
+  await toast.present();
  }
 
  handleRegister() {
